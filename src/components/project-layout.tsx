@@ -27,7 +27,6 @@ export const pageQuery = graphql`
   query BlogPostQuery($id: String) {
     mdx(id: { eq: $id }) {
       id
-      body
       frontmatter {
         title
       }
