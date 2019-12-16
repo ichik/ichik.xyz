@@ -29,6 +29,9 @@ const Sidebar = styled.div`
 `
 const Main = styled.main`
   grid-column-start: 2;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
 `
 
 type LayoutProps = { children: React.ReactNode } & typeof defaultProps
