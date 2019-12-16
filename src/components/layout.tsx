@@ -12,6 +12,11 @@ const GlobalStyles = createGlobalStyle`
   ${reset}
 `
 
+const Wrapper = styled.div`
+  display: grid;
+  grid-template-columns: 320px 1fr;
+`
+
 const Sidebar = styled.div`
   position: fixed;
   height: 100%;
@@ -21,6 +26,9 @@ const Sidebar = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+`
+const Main = styled.main`
+  grid-column-start: 2;
 `
 
 type LayoutProps = { children: React.ReactNode } & typeof defaultProps
@@ -35,11 +43,13 @@ const Layout = ({ children }: LayoutProps) => {
   const data: QueryResult = useStaticQuery(query)
   return (
     <>
-      <GlobalStyles />
-      <Sidebar>
-        <Img fluid={data.photo.childImageSharp.fluid} />
-      </Sidebar>
-      <main>{children}</main>
+      <Wrapper>
+        <GlobalStyles />
+        <Sidebar>
+          <Img fluid={data.photo.childImageSharp.fluid} />
+        </Sidebar>
+        <Main>{children}</Main>
+      </Wrapper>
     </>
   )
 }
