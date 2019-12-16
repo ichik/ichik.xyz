@@ -46,7 +46,7 @@ const Index: React.FunctionComponent<PageProps> = ({ data }) => {
 
 export const pageQuery = graphql`
   query projectIndex {
-    allMdx {
+    allMdx(sort: { fields: [frontmatter___title], order: ASC }) {
       edges {
         node {
           id
