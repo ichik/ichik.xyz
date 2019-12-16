@@ -6,19 +6,7 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
-    {
-      resolve: `gatsby-plugin-mdx`,
-      options: {
-        gatsbyRemarkPlugins: [
-          {
-            resolve: `gatsby-remark-normalize-paths`,
-            options: {
-              pathFields: ["cover"],
-            },
-          },
-        ],
-      },
-    },
+    `gatsby-plugin-mdx`,
     `gatsby-plugin-typescript`,
     {
       resolve: `gatsby-source-filesystem`,
