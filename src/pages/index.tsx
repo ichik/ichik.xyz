@@ -36,7 +36,6 @@ const Index: React.FunctionComponent<PageProps> = ({ data }) => {
           to={project.frontmatter.slug}
           title={project.frontmatter.title}
           image={project.frontmatter.cover}
-          aria-label={`View project "${project.title}"`}
         />
       ))}
     </Layout>
