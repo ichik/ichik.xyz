@@ -30,6 +30,20 @@ const GlobalStyles = createGlobalStyle`
     font-size: 1rem;
     font-weight: ${theme.fontWeights.normal};
   }
+  
+  a {
+    color: #4a6de8;
+    text-decoration: none;
+    background-image: linear-gradient(180deg, rgba(72, 100, 234, 0.2) 0, rgba(72, 100, 234, 0.2));
+    background-repeat: repeat-x;
+    background-position: 0 90%;
+    background-size: 1px 1px;
+  }
+  
+  a:hover {
+    color: rgb(226, 0, 22);
+    background-image: linear-gradient(180deg, rgba(226, 0, 22, 0.2) 0, rgba(226, 0, 22, 0.2));
+  }
 `
 
 const Wrapper = styled.div`
@@ -38,7 +52,7 @@ const Wrapper = styled.div`
   grid-template-columns: 1fr;
 
   @media (min-width: ${props => props.theme.breakpoints.tablet}) {
-    grid-template-columns: 320px 1fr;
+    grid-template-columns: ${props => props.theme.sidebar} 1fr;
   }
 `
 

@@ -8,6 +8,7 @@ interface ThemeShape {
   fontWeights: {
     [key: string]: number
   }
+  sidebar: string
 }
 
 const theme: ThemeShape = {
@@ -26,6 +27,7 @@ const theme: ThemeShape = {
     normal: 400,
     bold: 700,
   },
+  sidebar: "320px",
 }
 
 export default theme

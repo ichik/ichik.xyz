@@ -5,7 +5,7 @@ module.exports = {
     author: `Vadim Mikhnov`,
     intro: `Clarity and meaning for products and services with tools ranging from
 micro-animations to smart color palette choices.`,
-    subtitle: `Digital product designer based in Berlin`,
+    email: `hi@ichik.xyz`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

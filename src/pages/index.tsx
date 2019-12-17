@@ -27,7 +27,7 @@ type PageProps = {
       siteMetadata: {
         author: string
         intro: string
-        subtitle: string
+        email: string
       }
     }
     photo: ChildImageSharp
@@ -41,6 +41,12 @@ const Index: React.FunctionComponent<PageProps> = ({ data }) => {
       <Sidebar>
         <h1>{data.site.siteMetadata.author}</h1>
         <p>{data.site.siteMetadata.intro}</p>
+        <p>
+          Send your enquiries at{" "}
+          <a href={"mailto:" + data.site.siteMetadata.email}>
+            {data.site.siteMetadata.email}
+          </a>
+        </p>
         <Image
           fluid={data.photo.childImageSharp.fluid}
           alt={data.site.siteMetadata.author}
@@ -91,7 +97,7 @@ export const pageQuery = graphql`
       siteMetadata {
         author
         intro
-        subtitle
+        email
       }
     }
   }

@@ -9,16 +9,16 @@ const Sidebar = styled.div`
   @media (min-width: ${props => props.theme.breakpoints.tablet}) {
     position: fixed;
     height: 100%;
-    width: 320px;
+    width: ${props => props.theme.sidebar};
   }
 
   > h1 {
-    max-width: 400px;
-    padding: 0 20px;
+    max-width: 40rem;
+    padding: 0 1.25rem;
   }
   > p {
-    max-width: 20rem;
-    padding: 0 20px;
+    max-width: 40rem;
+    padding: 0 1.25rem;
   }
 `
 export default Sidebar
