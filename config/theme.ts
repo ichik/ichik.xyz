@@ -2,6 +2,12 @@ interface ThemeShape {
   breakpoints: {
     [key: string]: string
   }
+  fontSizes: {
+    [key: string]: string
+  }
+  fontWeights: {
+    [key: string]: number
+  }
 }
 
 const theme: ThemeShape = {
@@ -10,6 +16,15 @@ const theme: ThemeShape = {
     tabletVertical: "901px",
     desktop: "1200px",
     hd: "1800px",
+  },
+  fontSizes: {
+    root: "16px",
+    h1: "2.488rem",
+    h2: "2.074rem",
+  },
+  fontWeights: {
+    normal: 400,
+    bold: 700,
   },
 }
 

@@ -1,13 +1,35 @@
 import React from "react"
 import styled, { createGlobalStyle, ThemeProvider } from "styled-components"
-import { graphql, useStaticQuery } from "gatsby"
-import Img from "gatsby-image"
-import { ChildImageSharp } from "../types"
 import reset from "../styles/reset"
 import theme from "../../config/theme"
+import "@openfonts/fjalla-one_latin"
+import "@openfonts/cantarell_latin"
 
 const GlobalStyles = createGlobalStyle`
   ${reset}
+  ::selection {
+    background-color: #9adeff;
+  }
+  html {
+    font-size: ${theme.fontSizes.root};
+  }
+  body {
+    font-family: "Cantarell", sans-serif;
+  }
+  h1, h2, h3 {
+    font-family: "Fjalla One", sans-serif;
+    font-weight: ${theme.fontWeights.bold};
+  }
+  h1 {
+    font-size: ${theme.fontSizes.h1};
+  }
+  h2 {
+    font-size: ${theme.fontSizes.h2}
+  }
+  p {
+    font-size: 1rem;
+    font-weight: ${theme.fontWeights.normal};
+  }
 `
 
 const Wrapper = styled.div`

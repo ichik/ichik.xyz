@@ -23,6 +23,14 @@ type PageProps = {
         }
       ]
     }
+    site: {
+      siteMetadata: {
+        author: string
+        intro: string
+        subtitle: string
+      }
+    }
+    photo: ChildImageSharp
   }
 }
 
@@ -31,13 +39,12 @@ const Index: React.FunctionComponent<PageProps> = ({ data }) => {
   return (
     <Layout>
       <Sidebar>
-        <p>
-          Vadim Mikhnov is a digital product designer based in Berlin. Clarity
-          and meaning for products and services with tools ranging from
-          micro-animations to smart color palette choices. Send your enquiries
-          at hi@ichik.xyz
-        </p>
-        <Image fluid={data.photo.childImageSharp.fluid} alt="Vadim Mikhnov" />
+        <h1>{data.site.siteMetadata.author}</h1>
+        <p>{data.site.siteMetadata.intro}</p>
+        <Image
+          fluid={data.photo.childImageSharp.fluid}
+          alt={data.site.siteMetadata.author}
+        />
       </Sidebar>
       <Projects>
         {projects.map(({ node: project }) => (
@@ -78,6 +85,13 @@ export const pageQuery = graphql`
         fluid(quality: 95, maxWidth: 600) {
           ...GatsbyImageSharpFluid_withWebp_tracedSVG
         }
+      }
+    }
+    site {
+      siteMetadata {
+        author
+        intro
+        subtitle
       }
     }
   }

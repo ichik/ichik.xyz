@@ -7,6 +7,8 @@
   "dependencies": {
     "@mdx-js/mdx": "^1.5.1",
     "@mdx-js/react": "^1.5.1",
+    "@openfonts/cantarell_latin": "^1.44.0",
+    "@openfonts/fjalla-one_latin": "^1.44.0",
     "babel-plugin-styled-components": "^1.10.6",
     "gatsby": "^2.18.12",
     "gatsby-image": "^2.2.36",
@@ -47,5 +49,12 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ichik/ichik.xyz"
+  },
+  "bugs": {
+    "url": "https://github.com/ichik/ichik.xyz/issues"
   }
 }
