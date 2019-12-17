@@ -15,13 +15,13 @@ const Wrapper = styled.div`
 
   grid-template-columns: 1fr;
 
-  @media (min-width: ${props => props.theme.breakpoints.mobile}) {
+  @media (min-width: ${props => props.theme.breakpoints.tablet}) {
     grid-template-columns: 320px 1fr;
   }
 `
 
 const Sidebar = styled.div`
-  @media (min-width: ${props => props.theme.breakpoints.mobile}) {
+  @media (min-width: ${props => props.theme.breakpoints.tablet}) {
     position: fixed;
     height: 100%;
     width: 320px;
@@ -38,11 +38,12 @@ const Main = styled.main`
   grid-template-columns: 1fr;
   grid-template-rows: repeat(auto-fill, 70vw);
 
-  @media (min-width: ${props => props.theme.breakpoints.mobile}) {
+  @media (min-width: ${props => props.theme.breakpoints.tablet}) {
     grid-template-rows: repeat(auto-fill, 25vw);
+    grid-column-start: 2;
   }
 
-  @media (min-width: ${props => props.theme.breakpoints.tablet}) {
+  @media (min-width: ${props => props.theme.breakpoints.tabletVertical}) {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(auto-fill, 25vw);
   }
@@ -50,10 +51,6 @@ const Main = styled.main`
   @media (min-width: ${props => props.theme.breakpoints.desktop}) {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(auto-fill, 25vw);
-  }
-
-  @media (min-width: ${props => props.theme.breakpoints.mobile}) {
-    grid-column-start: 2;
   }
 `
 

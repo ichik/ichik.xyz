@@ -9,7 +9,7 @@ const GridCell = styled(Link)`
   position: relative;
   min-height: 70vw;
 
-  @media (min-width: ${props => props.theme.breakpoints.mobile}) {
+  @media (min-width: ${props => props.theme.breakpoints.tablet}) {
     min-height: 25vw;
   }
 

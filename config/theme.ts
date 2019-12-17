@@ -6,8 +6,8 @@ interface ThemeShape {
 
 const theme: ThemeShape = {
   breakpoints: {
-    mobile: "601px",
-    tablet: "901px",
+    tablet: "601px",
+    tabletVertical: "901px",
     desktop: "1200px",
     hd: "1800px",
   },
