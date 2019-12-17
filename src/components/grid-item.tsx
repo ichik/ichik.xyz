@@ -36,7 +36,11 @@ type GridItemProps = {
 
 const GridItem: React.FunctionComponent<GridItemProps> = props => {
   return (
-    <GridCell to={props.to} title={props.title}>
+    <GridCell
+      to={props.to}
+      title={props.title}
+      aria-label={`View project "${props.title}"`}
+    >
       <Image fluid={props.image.childImageSharp.fluid} />
       <Meta>
         <h2>{props.title}</h2>

@@ -73,6 +73,12 @@ const Layout = ({ children }: LayoutProps) => {
         <Wrapper>
           <GlobalStyles />
           <Sidebar>
+            <p>
+              Vadim Mikhnov is a digital product designer based in Berlin.
+              Clarity and meaning for products and services with tools ranging
+              from micro-animations to smart color palette choices. Send your
+              enquiries at hi@ichik.xyz
+            </p>
             <Img fluid={data.photo.childImageSharp.fluid} />
           </Sidebar>
           <Main>{children}</Main>

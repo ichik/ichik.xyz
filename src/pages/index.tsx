@@ -30,19 +30,15 @@ const Index: React.FunctionComponent<PageProps> = ({ data }) => {
   const { edges: projects } = data.allMdx
   return (
     <Layout>
-      {projects
-        .map(project => {
-          console.log(project)
-          return project
-        })
-        .map(({ node: project }) => (
-          <GridItem
-            key={project.id}
-            to={project.frontmatter.slug}
-            title={project.frontmatter.title}
-            image={project.frontmatter.cover}
-          />
-        ))}
+      {projects.map(({ node: project }) => (
+        <GridItem
+          key={project.id}
+          to={project.frontmatter.slug}
+          title={project.frontmatter.title}
+          image={project.frontmatter.cover}
+          aria-label={`View project "${project.title}"`}
+        />
+      ))}
     </Layout>
   )
 }
