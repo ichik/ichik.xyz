@@ -1,7 +1,6 @@
 import React from "react"
 
 import { graphql } from "gatsby"
-import Image from "gatsby-image"
 
 import Layout from "../components/layout"
 import GridItem from "../components/grid-item"
@@ -31,12 +30,19 @@ const Index: React.FunctionComponent<PageProps> = ({ data }) => {
   const { edges: projects } = data.allMdx
   return (
     <Layout>
-      {projects.map(({ node: project }) => (
-        <GridItem key={project.id} to={project.frontmatter.slug}>
-          <h2>{project.frontmatter.title}</h2>
-          <Image fluid={project.frontmatter.cover.childImageSharp.fluid} />
-        </GridItem>
-      ))}
+      {projects
+        .map(project => {
+          console.log(project)
+          return project
+        })
+        .map(({ node: project }) => (
+          <GridItem
+            key={project.id}
+            to={project.frontmatter.slug}
+            title={project.frontmatter.title}
+            image={project.frontmatter.cover}
+          />
+        ))}
     </Layout>
   )
 }

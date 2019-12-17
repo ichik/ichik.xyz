@@ -32,6 +32,8 @@ const Main = styled.main`
 
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(auto-fill, 25vw);
+  grid-gap: 5px;
 `
 
 type LayoutProps = { children: React.ReactNode } & typeof defaultProps
