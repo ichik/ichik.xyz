@@ -7,6 +7,11 @@ import { ChildImageSharp } from "../types"
 
 const GridCell = styled(Link)`
   position: relative;
+  min-height: 70vw;
+
+  @media (min-width: ${props => props.theme.breakpoints.mobile}) {
+    min-height: 25vw;
+  }
 
   > .gatsby-image-wrapper {
     position: absolute !important;
