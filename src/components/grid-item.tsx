@@ -17,6 +17,11 @@ const GridCell = styled(Link)`
   }
 `
 
+const Meta = styled.div`
+  position: absolute;
+  z-index: 10;
+`
+
 type GridItemProps = {
   key: string
   to: string
@@ -24,14 +29,9 @@ type GridItemProps = {
   image: ChildImageSharp
 }
 
-const Meta = styled.div`
-  position: absolute;
-  z-index: 10;
-`
-
 const GridItem: React.FunctionComponent<GridItemProps> = props => {
   return (
-    <GridCell key={props.key} to={props.to} title={props.title}>
+    <GridCell to={props.to} title={props.title}>
       <Image fluid={props.image.childImageSharp.fluid} />
       <Meta>
         <h2>{props.title}</h2>
