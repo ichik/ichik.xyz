@@ -44,7 +44,7 @@ const Meta = styled.div`
   right: 0;
   bottom: 0;
   left: 0;
-  padding: 2rem;
+  padding: 1rem 2rem;
 `
 
 type GridItemProps = {
