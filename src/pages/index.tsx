@@ -19,7 +19,7 @@ type PageProps = {
               title: string
               backgroundcolor: string
               color: string
-              big: boolean
+              big?: boolean
               cover: ChildImageSharp
             }
           }
