@@ -5,9 +5,21 @@ import Image from "gatsby-image"
 
 import { ChildImageSharp } from "../types"
 
-const GridCell = styled(Link)`
+type GridCellProps = {
+  backgroundcolor: string
+  color: string
+}
+
+const GridCell = styled(Link)<GridCellProps>`
   position: relative;
   min-height: 70vw;
+  background: ${props => props.backgroundcolor || "#000"};
+  color: ${props => props.color || "#fff"};
+
+  &:hover {
+    background: ${props => props.backgroundcolor || "#000"};
+    color: ${props => props.color || "#fff"};
+  }
 
   @media (min-width: ${props => props.theme.breakpoints.tablet}) {
     min-height: 25vw;
@@ -23,14 +35,22 @@ const GridCell = styled(Link)`
 `
 
 const Meta = styled.div`
+  display: flex;
   position: absolute;
   z-index: 10;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 2rem;
 `
 
 type GridItemProps = {
   key: string
   to: string
   title: string
+  backgroundcolor: string
+  color: string
   image: ChildImageSharp
 }
 
@@ -40,6 +60,8 @@ const GridItem: React.FunctionComponent<GridItemProps> = props => {
       to={props.to}
       title={props.title}
       aria-label={`View project "${props.title}"`}
+      backgroundcolor={props.backgroundcolor}
+      color={props.color}
     >
       <Image fluid={props.image.childImageSharp.fluid} />
       <Meta>

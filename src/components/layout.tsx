@@ -38,11 +38,12 @@ const GlobalStyles = createGlobalStyle`
     background-repeat: repeat-x;
     background-position: 0 90%;
     background-size: 1px 1px;
-  }
-  
-  a:hover {
-    color: rgb(226, 0, 22);
-    background-image: linear-gradient(180deg, rgba(226, 0, 22, 0.2) 0, rgba(226, 0, 22, 0.2));
+    transition: all 0.3s ease;
+
+    &:hover {
+      color: rgb(226, 0, 22);
+      background-image: linear-gradient(180deg, rgba(226, 0, 22, 0.2) 0, rgba(226, 0, 22, 0.2));
+    }
   }
 `
 

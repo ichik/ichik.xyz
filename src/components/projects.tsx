@@ -12,12 +12,10 @@ const Projects = styled.main`
 
   @media (min-width: ${props => props.theme.breakpoints.tabletVertical}) {
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(auto-fill, 25vw);
   }
 
   @media (min-width: ${props => props.theme.breakpoints.desktop}) {
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(auto-fill, 25vw);
   }
 `
 export default Projects

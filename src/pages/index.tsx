@@ -17,6 +17,8 @@ type PageProps = {
             frontmatter: {
               slug: string
               title: string
+              backgroundcolor: string
+              color: string
               cover: ChildImageSharp
             }
           }
@@ -58,6 +60,8 @@ const Index: React.FunctionComponent<PageProps> = ({ data }) => {
             key={project.id}
             to={project.frontmatter.slug}
             title={project.frontmatter.title}
+            backgroundcolor={project.frontmatter.backgroundcolor}
+            color={project.frontmatter.color}
             image={project.frontmatter.cover}
           />
         ))}
@@ -75,6 +79,8 @@ export const pageQuery = graphql`
           frontmatter {
             title
             slug
+            backgroundcolor
+            color
             cover {
               childImageSharp {
                 fluid(quality: 95, maxWidth: 1200) {
