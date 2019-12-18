@@ -2,7 +2,6 @@ import styled from "styled-components"
 
 const Projects = styled.main`
   display: grid;
-  grid-gap: 5px;
   grid-template-columns: 1fr;
   grid-template-rows: repeat(auto-fill, 70vw);
 
