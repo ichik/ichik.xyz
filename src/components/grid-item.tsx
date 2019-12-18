@@ -8,6 +8,7 @@ import { ChildImageSharp } from "../types"
 type GridCellProps = {
   backgroundcolor: string
   color: string
+  big: boolean
 }
 
 const GridCell = styled(Link)<GridCellProps>`
@@ -23,6 +24,7 @@ const GridCell = styled(Link)<GridCellProps>`
 
   @media (min-width: ${props => props.theme.breakpoints.tablet}) {
     min-height: 25vw;
+    grid-column-end: ${props => (props.big ? "span 2" : "span 1")};
   }
 
   > .gatsby-image-wrapper {
@@ -51,6 +53,7 @@ type GridItemProps = {
   title: string
   backgroundcolor: string
   color: string
+  big: boolean
   image: ChildImageSharp
 }
 
@@ -62,6 +65,7 @@ const GridItem: React.FunctionComponent<GridItemProps> = props => {
       aria-label={`View project "${props.title}"`}
       backgroundcolor={props.backgroundcolor}
       color={props.color}
+      big={props.big}
     >
       <Image fluid={props.image.childImageSharp.fluid} />
       <Meta>
