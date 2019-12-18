@@ -8,7 +8,7 @@ import { ChildImageSharp } from "../types"
 type GridCellProps = {
   backgroundcolor: string
   color: string
-  big: boolean
+  big?: boolean
 }
 
 const GridCell = styled(Link)<GridCellProps>`
@@ -53,7 +53,7 @@ type GridItemProps = {
   title: string
   backgroundcolor: string
   color: string
-  big: boolean
+  big?: boolean
   image: ChildImageSharp
 }
 
