@@ -15,11 +15,11 @@ const GridCell = styled(Link)<GridCellProps>`
   position: relative;
   min-height: 70vw;
   background: ${props => props.backgroundcolor || "#000"};
-  color: ${props => props.color || "#fff"};
+  color: hsl(${props => props.color || "0, 0%, 100%"});
 
   &:hover {
     background: ${props => props.backgroundcolor || "#000"};
-    color: ${props => props.color || "#fff"};
+    color: hsl(${props => props.color || "0, 0%, 100%"});
 
     > div h2::after {
       transform: translate3d(110%, 0, 0);
@@ -43,6 +43,7 @@ const GridCell = styled(Link)<GridCellProps>`
 
 const Meta = styled.div`
   display: flex;
+  flex-direction: column;
   position: absolute;
   z-index: 10;
   top: 0;
@@ -53,6 +54,7 @@ const Meta = styled.div`
 
   > h2 {
     display: inline-block;
+    width: fit-content;
     position: relative;
   }
 
@@ -95,7 +97,7 @@ const GridItem: React.FunctionComponent<GridItemProps> = props => {
       <Image fluid={props.image.childImageSharp.fluid} />
       <Meta>
         <h2>{props.title}</h2>
-        <Snackbar categories={props.categories} />
+        <Snackbar color={props.color} categories={props.categories} />
       </Meta>
     </GridCell>
   )
