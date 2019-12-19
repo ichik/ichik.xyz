@@ -22,7 +22,7 @@ const GridCell = styled(Link)<GridCellProps>`
     color: hsl(${props => props.color || "0, 0%, 100%"});
 
     > div h2::after {
-      transform: translate3d(110%, 0, 0);
+      transform: translate3d(104%, 0, 0);
       opacity: 1;
     }
   }
