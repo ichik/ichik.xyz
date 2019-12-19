@@ -8,7 +8,7 @@ import { ChildImageSharp } from "../types"
 type GridCellProps = {
   backgroundcolor: string
   color: string
-  big?: boolean
+  size?: string
 }
 
 const GridCell = styled(Link)<GridCellProps>`
@@ -29,7 +29,7 @@ const GridCell = styled(Link)<GridCellProps>`
 
   @media (min-width: ${props => props.theme.breakpoints.tablet}) {
     min-height: 25vw;
-    grid-column-end: ${props => (props.big ? "span 2" : "span 1")};
+    grid-column-end: ${props => (props.size == "big" ? "span 2" : "span 1")};
   }
 
   > .gatsby-image-wrapper {
@@ -44,6 +44,7 @@ const GridCell = styled(Link)<GridCellProps>`
 const Meta = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: flex-end;
   position: absolute;
   z-index: 10;
   top: 0;
@@ -71,6 +72,10 @@ const Meta = styled.div`
     transition: transform 0.4s, opacity 0.4s;
     transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
   }
+
+  &:hover {
+    background: hsla(0, 0%, 0%, 5%);
+  }
 `
 
 type GridItemProps = {
@@ -79,7 +84,7 @@ type GridItemProps = {
   title: string
   backgroundcolor: string
   color: string
-  big?: boolean
+  size?: string
   categories: string[]
   image: ChildImageSharp
 }
@@ -92,7 +97,7 @@ const GridItem: React.FunctionComponent<GridItemProps> = props => {
       aria-label={`View project "${props.title}"`}
       backgroundcolor={props.backgroundcolor}
       color={props.color}
-      big={props.big ? 1 : undefined} // fix this https://www.styled-components.com/docs/faqs#why-am-i-getting-html-attribute-warnings
+      size={props.size}
     >
       <Image fluid={props.image.childImageSharp.fluid} />
       <Meta>
