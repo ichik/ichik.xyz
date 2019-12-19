@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
 import Image from "gatsby-image"
-
+import Snackbar from "./snackbar"
 import { ChildImageSharp } from "../types"
 
 type GridCellProps = {
@@ -78,6 +78,7 @@ type GridItemProps = {
   backgroundcolor: string
   color: string
   big?: boolean
+  categories: string[]
   image: ChildImageSharp
 }
 
@@ -89,11 +90,12 @@ const GridItem: React.FunctionComponent<GridItemProps> = props => {
       aria-label={`View project "${props.title}"`}
       backgroundcolor={props.backgroundcolor}
       color={props.color}
-      big={props.big}
+      big={props.big ? 1 : undefined} // fix this https://www.styled-components.com/docs/faqs#why-am-i-getting-html-attribute-warnings
     >
       <Image fluid={props.image.childImageSharp.fluid} />
       <Meta>
         <h2>{props.title}</h2>
+        <Snackbar categories={props.categories} />
       </Meta>
     </GridCell>
   )
