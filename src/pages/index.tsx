@@ -17,6 +17,8 @@ type PageProps = {
             frontmatter: {
               slug: string
               title: string
+              client?: string
+              subtitle?: string
               backgroundcolor: string
               color: string
               size?: string
@@ -62,6 +64,8 @@ const Index: React.FunctionComponent<PageProps> = ({ data }) => {
             key={project.id}
             to={project.frontmatter.slug}
             title={project.frontmatter.title}
+            client={project.frontmatter.client}
+            subtitle={project.frontmatter.subtitle}
             backgroundcolor={project.frontmatter.backgroundcolor}
             color={project.frontmatter.color}
             size={project.frontmatter.size}
@@ -82,6 +86,8 @@ export const pageQuery = graphql`
           id
           frontmatter {
             title
+            client
+            subtitle
             slug
             backgroundcolor
             color

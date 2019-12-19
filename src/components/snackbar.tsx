@@ -4,7 +4,7 @@ import styled from "styled-components"
 const Wrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
-  margin-top: 0.25rem;
+  margin-top: 0.5rem;
 `
 
 const Snack = styled.span`
@@ -12,7 +12,7 @@ const Snack = styled.span`
   padding: 0.25rem 0.5rem;
   border-radius: 0.25rem;
   background: hsla(${props => props.color || "0, 0%, 100%"}, 15%);
-  margin-right: 0.25rem;
+  margin: 0 0.25rem 0.25rem 0;
 `
 
 type Snackbarprops = {

@@ -74,7 +74,7 @@ const Meta = styled.div`
   }
 
   &:hover {
-    background: hsla(0, 0%, 0%, 5%);
+    background: hsla(0, 0%, 100%, 5%);
   }
 `
 
@@ -82,6 +82,8 @@ type GridItemProps = {
   key: string
   to: string
   title: string
+  client?: string
+  subtitle?: string
   backgroundcolor: string
   color: string
   size?: string
@@ -102,6 +104,8 @@ const GridItem: React.FunctionComponent<GridItemProps> = props => {
       <Image fluid={props.image.childImageSharp.fluid} />
       <Meta>
         <h2>{props.title}</h2>
+        {props.client && <p>for {props.client}</p>}
+        {props.subtitle && <p>{props.subtitle}</p>}
         <Snackbar color={props.color} categories={props.categories} />
       </Meta>
     </GridCell>
