@@ -14,5 +14,5 @@
     "preserveConstEnums": true,
     "moduleResolution": "node"
   },
-  "include": ["./src/**/*", "./cypress/**/*"]
+  "include": ["./src/**/*"]
 }
