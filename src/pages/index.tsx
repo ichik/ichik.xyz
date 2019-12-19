@@ -63,7 +63,7 @@ const Index: React.FunctionComponent<PageProps> = ({ data }) => {
             title={project.frontmatter.title}
             backgroundcolor={project.frontmatter.backgroundcolor}
             color={project.frontmatter.color}
-            big={project.frontmatter.big}
+            big={project.frontmatter.big ? project.frontmatter.big : false}
             image={project.frontmatter.cover}
           />
         ))}
