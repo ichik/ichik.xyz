@@ -20,6 +20,11 @@ const GridCell = styled(Link)<GridCellProps>`
   &:hover {
     background: ${props => props.backgroundcolor || "#000"};
     color: ${props => props.color || "#fff"};
+
+    > div h2::after {
+      transform: translate3d(110%, 0, 0);
+      opacity: 1;
+    }
   }
 
   @media (min-width: ${props => props.theme.breakpoints.tablet}) {
@@ -45,6 +50,25 @@ const Meta = styled.div`
   bottom: 0;
   left: 0;
   padding: 1rem 2rem;
+
+  > h2 {
+    display: inline-block;
+    position: relative;
+  }
+
+  > h2::after {
+    content: "→";
+    font-family: "Fira Mono", sans-serif;
+    position: absolute;
+    height: 1rem;
+    width: 100%;
+    margin-top: 0.125rem;
+    right: 0;
+    transform: translate3d(50%, 0, 0);
+    opacity: 0;
+    transition: transform 0.4s, opacity 0.4s;
+    transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+  }
 `
 
 type GridItemProps = {

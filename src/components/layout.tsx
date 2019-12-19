@@ -4,6 +4,7 @@ import reset from "../styles/reset"
 import theme from "../../config/theme"
 import "@openfonts/fjalla-one_latin"
 import "@openfonts/cantarell_latin"
+import "@openfonts/fira-mono_latin"
 
 const GlobalStyles = createGlobalStyle`
   ${reset}
