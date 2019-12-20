@@ -17,6 +17,7 @@ type PageProps = {
             frontmatter: {
               slug: string
               title: string
+              sortindex: number
               client?: string
               subtitle?: string
               coverbackgroundcolor: string
@@ -80,7 +81,12 @@ const Index: React.FunctionComponent<PageProps> = ({ data }) => {
 
 export const pageQuery = graphql`
   query projectIndex {
-    allMdx(sort: { fields: [frontmatter___title], order: ASC }) {
+    allMdx(
+      sort: {
+        fields: [frontmatter___sortindex, frontmatter___title]
+        order: ASC
+      }
+    ) {
       edges {
         node {
           id
