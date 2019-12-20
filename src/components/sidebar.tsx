@@ -13,11 +13,11 @@ const Sidebar = styled.div`
   }
 
   > h1 {
-    max-width: 30rem;
+    max-width: 25rem;
     padding: 0 1.25rem;
   }
   > p {
-    max-width: 30rem;
+    max-width: 25rem;
     padding: 0 1.25rem;
   }
 
@@ -25,11 +25,13 @@ const Sidebar = styled.div`
     max-width: 400px;
 
     @media (min-width: ${props => props.theme.breakpoints.tablet}) {
-      margin-left: 25%;
+      margin-left: 55%;
+      margin-top: -20%;
     }
 
     @media (min-width: ${props => props.theme.breakpoints.tabletHorizontal}) {
       margin-left: 0;
+      margin-top: 0;
     }
   }
 `
