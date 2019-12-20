@@ -13,12 +13,24 @@ const Sidebar = styled.div`
   }
 
   > h1 {
-    max-width: 40rem;
+    max-width: 30rem;
     padding: 0 1.25rem;
   }
   > p {
-    max-width: 40rem;
+    max-width: 30rem;
     padding: 0 1.25rem;
+  }
+
+  > .gatsby-image-wrapper {
+    max-width: 400px;
+
+    @media (min-width: ${props => props.theme.breakpoints.tablet}) {
+      margin-left: 25%;
+    }
+
+    @media (min-width: ${props => props.theme.breakpoints.tabletVertical}) {
+      margin-left: 0;
+    }
   }
 `
 export default Sidebar

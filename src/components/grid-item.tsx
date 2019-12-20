@@ -28,11 +28,7 @@ const GridCell = styled(Link)<GridCellProps>`
   }
 
   @media (min-width: ${props => props.theme.breakpoints.tablet}) {
-    min-height: 80vw;
-  }
-
-  @media (min-width: ${props => props.theme.breakpoints.tablet}) {
-    min-height: 40vw;
+    min-height: 50vw;
   }
 
   @media (min-width: ${props => props.theme.breakpoints.desktop}) {

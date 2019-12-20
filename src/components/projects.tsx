@@ -5,15 +5,16 @@ const Projects = styled.main`
   grid-auto-flow: dense;
   grid-template-columns: 1fr;
   grid-template-rows: repeat(auto-fill, 100vw);
-  overflow: hidden;
+  overflow-x: hidden;
 
   @media (min-width: ${props => props.theme.breakpoints.tablet}) {
-    grid-template-rows: repeat(auto-fill, 80vw);
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(auto-fill, 50vw);
   }
 
   @media (min-width: ${props => props.theme.breakpoints.tabletVertical}) {
     grid-column-start: 2;
-    grid-template-rows: repeat(auto-fill, 40vw);
+    grid-template-columns: 1fr;
   }
 
   @media (min-width: ${props => props.theme.breakpoints.desktop}) {
