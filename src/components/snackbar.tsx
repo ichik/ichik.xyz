@@ -4,14 +4,15 @@ import styled from "styled-components"
 const Wrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
-  margin-top: 0.5rem;
+  margin-top: 0.75rem;
 `
 
 const Snack = styled.span`
   font-family: "Fira Mono", monospace;
-  padding: 0.25rem 0.5rem;
+  font-size: 0.8rem;
   border-radius: 0.25rem;
   background: hsla(${props => props.color || "0, 0%, 100%"}, 15%);
+  padding: 0.25rem 0.5rem;
   margin: 0 0.25rem 0.25rem 0;
 `
 

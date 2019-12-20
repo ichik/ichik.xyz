@@ -4,7 +4,7 @@ const Projects = styled.main`
   display: grid;
   grid-auto-flow: dense;
   grid-template-columns: 1fr;
-  grid-template-rows: repeat(auto-fill, 70vw);
+  grid-template-rows: repeat(auto-fill, 100vw);
   overflow: hidden;
 
   @media (min-width: ${props => props.theme.breakpoints.tablet}) {

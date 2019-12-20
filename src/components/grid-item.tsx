@@ -13,7 +13,7 @@ type GridCellProps = {
 
 const GridCell = styled(Link)<GridCellProps>`
   position: relative;
-  min-height: 70vw;
+  min-height: 100vw;
   background: hsl(${props => props.backgroundcolor || "0, 0%, 0%"});
   color: hsl(${props => props.color || "0, 0%, 100%"});
 
@@ -51,7 +51,7 @@ const Meta = styled.div`
   right: 0;
   bottom: 0;
   left: 0;
-  padding: 1rem 2rem;
+  padding: 0.5rem 1rem;
 
   > h2 {
     display: inline-block;
