@@ -6,7 +6,7 @@ const Sidebar = styled.div`
   justify-content: flex-end;
   padding-top: 2rem;
   background: ${props => props.color || "#f9f9f9"};
-  @media (min-width: ${props => props.theme.breakpoints.tablet}) {
+  @media (min-width: ${props => props.theme.breakpoints.tabletVertical}) {
     position: fixed;
     height: 100%;
     width: ${props => props.theme.sidebar};

@@ -50,10 +50,9 @@ const GlobalStyles = createGlobalStyle`
 
 const Wrapper = styled.div`
   display: grid;
-
   grid-template-columns: 1fr;
 
-  @media (min-width: ${props => props.theme.breakpoints.tablet}) {
+  @media (min-width: ${props => props.theme.breakpoints.tabletVertical}) {
     grid-template-columns: ${props => props.theme.sidebar} 1fr;
   }
 `
