@@ -3,7 +3,7 @@ import { graphql, useStaticQuery } from "gatsby"
 import styled from "styled-components"
 
 const Footer = styled.footer`
-  background: hsl(0, 0%, 0%);
+  background: hsl(60, 9%, 6%);
   padding: 2rem;
   display: flex;
   flex-direction: column;
@@ -26,8 +26,16 @@ const Linklist = styled.div`
   margin-top: 1rem;
 `
 
+interface QueryResult {
+  site: {
+    siteMetadata: {
+      [key: string]: string
+    }
+  }
+}
+
 export default () => {
-  const data = useStaticQuery(graphql`
+  const data: QueryResult = useStaticQuery(graphql`
     query HeaderQuery {
       site {
         siteMetadata {

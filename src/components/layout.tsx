@@ -9,7 +9,7 @@ import "@openfonts/fira-mono_latin"
 const GlobalStyles = createGlobalStyle`
   ${reset}
   ::selection {
-    background-color: #9adeff;
+    background-color: hsl(200, 100%, 80%);
   }
   html {
     font-size: ${theme.fontSizes.root};
@@ -33,9 +33,9 @@ const GlobalStyles = createGlobalStyle`
   }
   
   a {
-    color: #4a6de8;
+    color: hsl(200, 100%, 35%);
     text-decoration: none;
-    background-image: linear-gradient(180deg, rgba(72, 100, 234, 0.2) 0, rgba(72, 100, 234, 0.2));
+    background-image: linear-gradient(180deg, hsla(200, 100%, 35%, 0.25) 0, hsla(200, 100%, 35%, 0.25));
     background-repeat: repeat-x;
     background-position: 0 90%;
     background-size: 1px 1px;
@@ -43,7 +43,7 @@ const GlobalStyles = createGlobalStyle`
 
     &:hover {
       color: rgb(226, 0, 22);
-      background-image: linear-gradient(180deg, rgba(226, 0, 22, 0.2) 0, rgba(226, 0, 22, 0.2));
+      background-image: linear-gradient(180deg, rgba(226, 0, 22, 0.25) 0, rgba(226, 0, 22, 0.25));
     }
   }
 `

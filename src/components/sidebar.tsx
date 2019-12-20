@@ -5,7 +5,7 @@ const Sidebar = styled.div`
   flex-direction: column;
   justify-content: flex-end;
   padding-top: 2rem;
-  background: ${props => props.color || "#f9f9f9"};
+  background: hsl(${props => props.color || "0, 0%, 98%"});
   @media (min-width: ${props => props.theme.breakpoints.tabletHorizontal}) {
     position: fixed;
     height: 100%;
