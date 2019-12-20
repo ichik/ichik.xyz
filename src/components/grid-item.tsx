@@ -31,6 +31,10 @@ const GridCell = styled(Link)<GridCellProps>`
     min-height: 50vw;
   }
 
+  @media (min-width: ${props => props.theme.breakpoints.tabletHorizontal}) {
+    min-height: 40vw;
+  }
+
   @media (min-width: ${props => props.theme.breakpoints.desktop}) {
     min-height: 25vw;
     grid-column-end: ${props => (props.size == "big" ? "span 2" : "span 1")};
