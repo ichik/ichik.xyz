@@ -6,6 +6,9 @@ module.exports = {
     intro: `Clarity and meaning for products and services with tools ranging from
 micro-animations to smart color palette choices.`,
     email: `hi@ichik.xyz`,
+    linkedin: `ichik`,
+    github: `ichik`,
+    dribbble: `ichik`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
