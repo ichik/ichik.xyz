@@ -14,11 +14,11 @@ type GridCellProps = {
 const GridCell = styled(Link)<GridCellProps>`
   position: relative;
   min-height: 70vw;
-  background: ${props => props.backgroundcolor || "#000"};
+  background: hsl(${props => props.backgroundcolor || "0, 0%, 0%"});
   color: hsl(${props => props.color || "0, 0%, 100%"});
 
   &:hover {
-    background: ${props => props.backgroundcolor || "#000"};
+    background: hsl(${props => props.backgroundcolor || "0, 0%, 0%"});
     color: hsl(${props => props.color || "0, 0%, 100%"});
 
     > div h2::after {
