@@ -6,7 +6,7 @@ const Sidebar = styled.div`
   justify-content: flex-end;
   padding-top: 2rem;
   background: ${props => props.color || "#f9f9f9"};
-  @media (min-width: ${props => props.theme.breakpoints.tabletVertical}) {
+  @media (min-width: ${props => props.theme.breakpoints.tabletHorizontal}) {
     position: fixed;
     height: 100%;
     width: ${props => props.theme.sidebar};
@@ -28,7 +28,7 @@ const Sidebar = styled.div`
       margin-left: 25%;
     }
 
-    @media (min-width: ${props => props.theme.breakpoints.tabletVertical}) {
+    @media (min-width: ${props => props.theme.breakpoints.tabletHorizontal}) {
       margin-left: 0;
     }
   }

@@ -52,7 +52,7 @@ const Wrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr;
 
-  @media (min-width: ${props => props.theme.breakpoints.tabletVertical}) {
+  @media (min-width: ${props => props.theme.breakpoints.tabletHorizontal}) {
     grid-template-columns: ${props => props.theme.sidebar} 1fr;
   }
 `
