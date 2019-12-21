@@ -1,5 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
+import Layout from "../components/layout"
 
 type PageProps = {
   data: {
@@ -15,9 +16,11 @@ const PageTemplate: React.FunctionComponent<PageProps> = ({
   data: { mdx },
 }) => {
   return (
-    <div>
-      <h1>{mdx.frontmatter.title}</h1>
-    </div>
+    <Layout>
+      <div>
+        <h1>{mdx.frontmatter.title}</h1>
+      </div>
+    </Layout>
   )
 }
 
