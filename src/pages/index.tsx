@@ -27,7 +27,7 @@ type PageProps = {
               client?: string
               size?: string
               subtitle?: string
-              year?: string
+              year: string
 
               cover: ChildImageSharp
             }
