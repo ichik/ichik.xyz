@@ -17,15 +17,18 @@ type PageProps = {
           node: {
             id: string
             frontmatter: {
-              slug: string
-              title: string
-              sortindex: number
-              client?: string
-              subtitle?: string
+              categories: string[]
               coverbackgroundcolor: string
               coverforegroundcolor: string
+              slug: string
+              sortindex: number
+              title: string
+
+              client?: string
               size?: string
-              categories: string[]
+              subtitle?: string
+              year?: string
+
               cover: ChildImageSharp
             }
           }
@@ -35,8 +38,8 @@ type PageProps = {
     site: {
       siteMetadata: {
         author: string
-        intro: string
         email: string
+        intro: string
       }
     }
     photo: ChildImageSharp
@@ -65,16 +68,17 @@ const Index: React.FunctionComponent<PageProps> = ({ data }) => {
       <Projects>
         {projects.map(({ node: project }) => (
           <GridItem
-            key={project.id}
-            to={project.frontmatter.slug}
-            title={project.frontmatter.title}
-            client={project.frontmatter.client}
-            subtitle={project.frontmatter.subtitle}
             backgroundcolor={project.frontmatter.coverbackgroundcolor}
-            color={project.frontmatter.coverforegroundcolor}
-            size={project.frontmatter.size}
             categories={project.frontmatter.categories}
+            client={project.frontmatter.client}
+            color={project.frontmatter.coverforegroundcolor}
             image={project.frontmatter.cover}
+            key={project.id}
+            size={project.frontmatter.size}
+            subtitle={project.frontmatter.subtitle}
+            title={project.frontmatter.title}
+            to={project.frontmatter.slug}
+            year={project.frontmatter.year}
           />
         ))}
       </Projects>
@@ -95,14 +99,15 @@ export const pageQuery = graphql`
         node {
           id
           frontmatter {
-            title
+            categories
             client
-            subtitle
-            slug
             coverbackgroundcolor
             coverforegroundcolor
             size
-            categories
+            slug
+            subtitle
+            title
+            year
             cover {
               childImageSharp {
                 fluid(quality: 95, maxWidth: 1200) {

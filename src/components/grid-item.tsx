@@ -11,6 +11,21 @@ type GridCellProps = {
   size?: string
 }
 
+type GridItemProps = {
+  backgroundcolor: string
+  categories: string[]
+  color: string
+  image: ChildImageSharp
+  key: string
+  title: string
+  to: string
+
+  client?: string
+  size?: string
+  subtitle?: string
+  year?: string
+}
+
 const GridCell = styled(Link)<GridCellProps>`
   position: relative;
   min-height: 100vw;
@@ -86,34 +101,29 @@ const Meta = styled.div`
   }
 `
 
-type GridItemProps = {
-  key: string
-  to: string
-  title: string
-  client?: string
-  subtitle?: string
-  backgroundcolor: string
-  color: string
-  size?: string
-  categories: string[]
-  image: ChildImageSharp
-}
-
 const GridItem: React.FunctionComponent<GridItemProps> = props => {
   return (
     <GridCell
-      to={props.to}
-      title={props.title}
       aria-label={`View project "${props.title}"`}
       backgroundcolor={props.backgroundcolor}
       color={props.color}
       size={props.size}
+      title={props.title}
+      to={props.to}
     >
       <Image fluid={props.image.childImageSharp.fluid} />
       <Meta>
         <h2>{props.title}</h2>
-        {props.client && <p>for {props.client}</p>}
-        {props.subtitle && <p>{props.subtitle}</p>}
+        {props.client && (
+          <p>
+            for {props.client}, {props.year}
+          </p>
+        )}
+        {props.subtitle && (
+          <p>
+            {props.subtitle}, {props.year}
+          </p>
+        )}
         <Snackbar color={props.color} categories={props.categories} />
       </Meta>
     </GridCell>
