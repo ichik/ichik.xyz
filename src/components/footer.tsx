@@ -7,7 +7,7 @@ const Footer = styled.footer`
   padding: 2rem;
   display: flex;
   flex-direction: column;
-  color: hsl(0, 0%, 100%);
+  color: hsl(240, 100%, 88%);
 
   @media (min-width: ${props => props.theme.breakpoints.tablet}) {
     padding: 4rem;
