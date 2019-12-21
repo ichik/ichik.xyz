@@ -82,7 +82,6 @@ const Index: React.FunctionComponent<PageProps> = ({ data }) => {
           />
         ))}
       </Projects>
-      <Footer />
     </Layout>
   )
 }

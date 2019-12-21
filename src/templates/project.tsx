@@ -1,6 +1,8 @@
 import React from "react"
 import { graphql } from "gatsby"
+import styled from "styled-components"
 import Layout from "../components/layout"
+import Footer from "../components/footer"
 
 type PageProps = {
   data: {
@@ -12,14 +14,20 @@ type PageProps = {
   }
 }
 
+const Main = styled.main`
+  @media (min-width: ${props => props.theme.breakpoints.tabletHorizontal}) {
+    grid-column-start: 2;
+  }
+`
+
 const PageTemplate: React.FunctionComponent<PageProps> = ({
   data: { mdx },
 }) => {
   return (
     <Layout>
-      <div>
+      <Main>
         <h1>{mdx.frontmatter.title}</h1>
-      </div>
+      </Main>
     </Layout>
   )
 }

@@ -2,6 +2,7 @@ import React from "react"
 import styled, { createGlobalStyle, ThemeProvider } from "styled-components"
 import reset from "../styles/reset"
 import theme from "../../config/theme"
+import Footer from "./footer"
 import "@openfonts/fjalla-one_latin"
 import "@openfonts/cantarell_latin"
 import "@openfonts/fira-mono_latin"
@@ -66,6 +67,7 @@ const Layout = ({ children }: LayoutProps) => {
         <Wrapper>
           <GlobalStyles />
           {children}
+          <Footer />
         </Wrapper>
       </>
     </ThemeProvider>
