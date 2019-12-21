@@ -2,6 +2,7 @@ import React from "react"
 import styled, { createGlobalStyle, ThemeProvider } from "styled-components"
 import reset from "../styles/reset"
 import theme from "../../config/theme"
+import Meta from "./meta"
 import "@openfonts/fjalla-one_latin"
 import "@openfonts/cantarell_latin"
 import "@openfonts/fira-mono_latin"
@@ -63,6 +64,7 @@ const Layout = ({ children }: LayoutProps) => {
   return (
     <ThemeProvider theme={theme}>
       <>
+        <Meta />
         <Wrapper>
           <GlobalStyles />
           {children}

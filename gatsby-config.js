@@ -1,5 +1,7 @@
 module.exports = {
   siteMetadata: {
+    siteLanguage: `en`,
+    siteUrl: `https://ichik.xyz`,
     title: `Portfolio of Vadim Mikhnov`,
     description: `Select case studies.`,
     author: `Vadim Mikhnov`,
@@ -9,6 +11,7 @@ micro-animations to smart color palette choices.`,
     linkedin: `ichik`,
     github: `ichik`,
     dribbble: `ichik`,
+    ogLanguage: `en_US`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
