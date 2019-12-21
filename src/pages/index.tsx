@@ -1,6 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 import Image from "gatsby-image"
+import Meta from "../components/meta"
 import Layout from "../components/layout"
 import Sidebar from "../components/sidebar"
 import Projects from "../components/projects"
@@ -46,6 +47,7 @@ const Index: React.FunctionComponent<PageProps> = ({ data }) => {
   const { edges: projects } = data.allMdx
   return (
     <Layout>
+      <Meta />
       <Sidebar>
         <h1>{data.site.siteMetadata.author}</h1>
         <p>{data.site.siteMetadata.intro}</p>
