@@ -26,6 +26,11 @@ type Mainprops = {
 }
 
 const Main = styled.main<Mainprops>`
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  padding: 4rem 1rem;
+
   color: hsl(${props => props.textcolor || "0, 0%, 0%"});
   background: hsl(${props => props.backgroundcolor || "0, 0%, 100%"});
 
@@ -33,12 +38,13 @@ const Main = styled.main<Mainprops>`
     grid-column-start: 2;
   }
 
-  > * {
-    grid-column-start: 2;
-  }
-
   > h1,
   p {
+    max-width: 40rem;
+  }
+
+  > .gatsby-resp-image-wrapper {
+    width: 100%;
   }
 `
 
