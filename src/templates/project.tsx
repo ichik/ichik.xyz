@@ -34,12 +34,15 @@ const Main = styled.main<Mainprops>`
   flex-flow: column;
   align-items: center;
   padding: 4rem 1rem;
+  width: 100vw;
+  overflow-x: hidden;
 
   color: hsl(${props => props.textcolor || "0, 0%, 0%"});
   background: hsl(${props => props.backgroundcolor || "0, 0%, 100%"});
 
   @media (min-width: ${props => props.theme.breakpoints.tabletHorizontal}) {
     grid-column-start: 2;
+    width: auto;
   }
 
   > * {
@@ -58,6 +61,7 @@ const Main = styled.main<Mainprops>`
 
   > iframe {
     margin-bottom: 4rem;
+    max-width: 100%;
   }
 
   a {
