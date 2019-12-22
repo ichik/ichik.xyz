@@ -45,6 +45,7 @@ const Main = styled.main<Mainprops>`
 
   > .gatsby-resp-image-wrapper {
     width: 100%;
+    margin-bottom: 1rem;
   }
 `
 
