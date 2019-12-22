@@ -6,7 +6,6 @@ import Layout from "../components/layout"
 import Sidebar from "../components/sidebar"
 import Projects from "../components/projects"
 import GridItem from "../components/grid-item"
-import Footer from "../components/footer"
 import { ChildImageSharp } from "../types"
 
 type PageProps = {

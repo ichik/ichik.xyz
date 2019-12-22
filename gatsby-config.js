@@ -15,7 +15,35 @@ micro-animations to smart color palette choices.`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-mdx`,
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        gatsbyRemarkPlugins: [
+          {
+            extensions: [`.mdx`, `.md`],
+            plugins: [`gatsby-remark-images`],
+            resolve: `gatsby-remark-images`,
+            options: {
+              backgroundColor: `none`,
+              linkImagesToOriginal: false,
+              maxWidth: 2500,
+              quality: 90,
+              withWebp: true,
+              tracedSVG: true,
+              loading: "lazy",
+            },
+          },
+        ],
+      },
+    },
+    {
+      resolve: `gatsby-remark-images`,
+      options: {
+        backgroundColor: `none`,
+      },
+    },
     `gatsby-plugin-typescript`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -31,8 +59,6 @@ micro-animations to smart color palette choices.`,
         path: `${__dirname}/content/projects`,
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
