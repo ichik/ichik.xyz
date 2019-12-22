@@ -54,7 +54,7 @@ const Index: React.FunctionComponent<PageProps> = ({ data }) => {
         <h1>{data.site.siteMetadata.author}</h1>
         <p>{data.site.siteMetadata.intro}</p>
         <p>
-          Send your enquiries at{" "}
+          Send enquiries at{" "}
           <a href={"mailto:" + data.site.siteMetadata.email}>
             {data.site.siteMetadata.email}
           </a>

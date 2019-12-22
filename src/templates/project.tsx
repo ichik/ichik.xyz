@@ -15,6 +15,8 @@ type PageProps = {
         sidebarcolor: string
         backgroundcolor: string
         textcolor: string
+        linkcolor: string
+        linkhovercolor: string
       }
     }
   }
@@ -23,6 +25,8 @@ type PageProps = {
 type Mainprops = {
   backgroundcolor: string
   textcolor: string
+  linkcolor: string
+  linkhovercolor: string
 }
 
 const Main = styled.main<Mainprops>`
@@ -38,6 +42,10 @@ const Main = styled.main<Mainprops>`
     grid-column-start: 2;
   }
 
+  > * {
+    margin-bottom: 1rem;
+  }
+
   > h1,
   p {
     max-width: 40rem;
@@ -45,7 +53,29 @@ const Main = styled.main<Mainprops>`
 
   > .gatsby-resp-image-wrapper {
     width: 100%;
-    margin-bottom: 1rem;
+    margin-bottom: 4rem;
+  }
+
+  > iframe {
+    margin-bottom: 4rem;
+  }
+
+  a {
+    color: hsl(${props => props.linkcolor || "200, 100%, 35%"});
+    background-image: linear-gradient(
+      180deg,
+      hsla(${props => props.linkcolor || "200, 100%, 35%"}, 0.25) 0,
+      hsla(${props => props.linkcolor || "200, 100%, 35%"}, 0.25)
+    );
+
+    &:hover {
+      color: hsl(${props => props.linkhovercolor || "200, 100%, 35%"});
+      background-image: linear-gradient(
+        180deg,
+        hsla(${props => props.linkhovercolor || "200, 100%, 35%"}, 0.25) 0,
+        hsla(${props => props.linkhovercolor || "200, 100%, 35%"}, 0.25)
+      );
+    }
   }
 `
 
@@ -59,6 +89,8 @@ const PageTemplate: React.FunctionComponent<PageProps> = ({
       <Main
         backgroundcolor={mdx.frontmatter.backgroundcolor}
         textcolor={mdx.frontmatter.textcolor}
+        linkcolor={mdx.frontmatter.linkcolor}
+        linkhovercolor={mdx.frontmatter.linkhovercolor}
       >
         <h1>{mdx.frontmatter.title}</h1>
         <MDXRenderer>{mdx.body}</MDXRenderer>
@@ -79,6 +111,8 @@ export const pageQuery = graphql`
         sidebarcolor
         backgroundcolor
         textcolor
+        linkcolor
+        linkhovercolor
       }
     }
   }
