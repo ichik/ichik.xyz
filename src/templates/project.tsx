@@ -28,10 +28,17 @@ type Mainprops = {
 const Main = styled.main<Mainprops>`
   color: hsl(${props => props.textcolor || "0, 0%, 0%"});
   background: hsl(${props => props.backgroundcolor || "0, 0%, 100%"});
-  padding: 4rem;
 
   @media (min-width: ${props => props.theme.breakpoints.tabletHorizontal}) {
     grid-column-start: 2;
+  }
+
+  > * {
+    grid-column-start: 2;
+  }
+
+  > h1,
+  p {
   }
 `
 

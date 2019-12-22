@@ -20,13 +20,14 @@ micro-animations to smart color palette choices.`,
     {
       resolve: `gatsby-plugin-mdx`,
       options: {
+        extensions: [`.mdx`, `.md`],
+        plugins: [`gatsby-remark-unwrap-images`, `gatsby-remark-images`],
         gatsbyRemarkPlugins: [
+          `gatsby-remark-unwrap-images`,
           {
-            extensions: [`.mdx`, `.md`],
-            plugins: [`gatsby-remark-images`],
             resolve: `gatsby-remark-images`,
             options: {
-              backgroundColor: `none`,
+              backgroundColor: `transparent`,
               linkImagesToOriginal: false,
               maxWidth: 2500,
               quality: 90,
@@ -41,7 +42,7 @@ micro-animations to smart color palette choices.`,
     {
       resolve: `gatsby-remark-images`,
       options: {
-        backgroundColor: `none`,
+        backgroundColor: `transparent`,
       },
     },
     `gatsby-plugin-typescript`,
