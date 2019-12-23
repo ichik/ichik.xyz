@@ -1,15 +1,26 @@
 import styled from "styled-components"
 
-const Sidebar = styled.div`
+type SidebarProps = {
+  backgroundcolor?: string
+  color?: string
+  index?: boolean
+}
+
+const Sidebar = styled.div<SidebarProps>`
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: ${props => (props.index ? "flex-end;" : "space-between")};
   padding-top: 2rem;
-  background: hsl(${props => props.color || "0, 0%, 98%"});
+  background: hsl(${props => props.backgroundcolor || "0, 0%, 98%"});
+  color: hsl(${props => props.color || "0, 0%, 0%"});
   @media (min-width: ${props => props.theme.breakpoints.tabletHorizontal}) {
     position: fixed;
     height: 100%;
     width: ${props => props.theme.sidebar};
+  }
+
+  > * ~ * {
+    margin-top: 1rem;
   }
 
   > h1 {

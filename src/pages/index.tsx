@@ -50,7 +50,7 @@ const Index: React.FunctionComponent<PageProps> = ({ data }) => {
   return (
     <Layout>
       <Meta />
-      <Sidebar>
+      <Sidebar index>
         <h1>{data.site.siteMetadata.author}</h1>
         <p>{data.site.siteMetadata.intro}</p>
         <p>

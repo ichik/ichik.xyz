@@ -4,6 +4,7 @@ import { MDXRenderer } from "gatsby-plugin-mdx"
 import styled from "styled-components"
 import Layout from "../components/layout"
 import Sidebar from "../components/sidebar"
+import HomeButton from "../components/homebutton"
 import Meta from "../components/meta"
 
 type PageProps = {
@@ -17,6 +18,13 @@ type PageProps = {
         textcolor: string
         linkcolor: string
         linkhovercolor: string
+        year: string
+        description: string
+
+        client?: string
+        clienturl?: string
+
+        subtitle?: string
       }
     }
   }
@@ -83,13 +91,48 @@ const Main = styled.main<Mainprops>`
   }
 `
 
+const Colophon = styled.div`
+  padding: 0 1.25rem 2rem 1.25rem;
+`
+
 const PageTemplate: React.FunctionComponent<PageProps> = ({
   data: { mdx },
 }) => {
   return (
     <Layout>
       <Meta title={mdx.frontmatter.title} />
-      <Sidebar color={mdx.frontmatter.sidebarcolor} />
+      <Sidebar
+        backgroundcolor={mdx.frontmatter.sidebarcolor}
+        color={mdx.frontmatter.textcolor}
+      >
+        <HomeButton
+          color={mdx.frontmatter.sidebarcolor}
+          backgroundcolor={mdx.frontmatter.linkcolor}
+          to="/"
+        >
+          Open Home Page
+        </HomeButton>
+        <Colophon>
+          {mdx.frontmatter.client ? (
+            mdx.frontmatter.clienturl ? (
+              <p>
+                For{" "}
+                <a href={mdx.frontmatter.clienturl}>{mdx.frontmatter.client}</a>
+                , {mdx.frontmatter.description}
+              </p>
+            ) : (
+              <p>
+                For {mdx.frontmatter.client}, {mdx.frontmatter.description}
+              </p>
+            )
+          ) : (
+            <p>
+              {mdx.frontmatter.subtitle}, {mdx.frontmatter.description}
+            </p>
+          )}
+          <p>{mdx.frontmatter.year}</p>
+        </Colophon>
+      </Sidebar>
       <Main
         backgroundcolor={mdx.frontmatter.backgroundcolor}
         textcolor={mdx.frontmatter.textcolor}
@@ -117,6 +160,11 @@ export const pageQuery = graphql`
         textcolor
         linkcolor
         linkhovercolor
+        year
+        client
+        clienturl
+        subtitle
+        description
       }
     }
   }
