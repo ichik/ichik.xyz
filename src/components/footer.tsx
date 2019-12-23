@@ -7,7 +7,25 @@ const Footer = styled.footer`
   padding: 2rem;
   display: flex;
   flex-direction: column;
-  color: hsl(240, 100%, 88%);
+  color: hsl(60, 9%, 88%);
+
+  a {
+    color: hsl(200, 100%, 60%);
+    background-image: linear-gradient(
+      180deg,
+      hsla(200, 100%, 60%, 0.25) 0,
+      hsla(200, 100%, 60%, 0.25)
+    );
+
+    :hover {
+      color: hsl(354, 100%, 50%);
+      background-image: linear-gradient(
+        180deg,
+        hsla(354, 100%, 50%, 0.25) 0,
+        hsla(354, 100%, 50%, 0.25)
+      );
+    }
+  }
 
   @media (min-width: ${props => props.theme.breakpoints.tablet}) {
     padding: 4rem;
