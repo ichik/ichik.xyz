@@ -5,6 +5,7 @@ import styled from "styled-components"
 import Layout from "../components/layout"
 import Sidebar from "../components/sidebar"
 import HomeButton from "../components/homebutton"
+import Snackbar from "../components/snackbar"
 import Meta from "../components/meta"
 
 type PageProps = {
@@ -20,10 +21,10 @@ type PageProps = {
         linkhovercolor: string
         year: string
         description: string
+        categories: string[]
 
         client?: string
         clienturl?: string
-
         subtitle?: string
       }
     }
@@ -72,7 +73,7 @@ const Main = styled.main<Mainprops>`
 `
 
 const Colophon = styled.div`
-  padding: 0 1.25rem 2rem 1.25rem;
+  padding: 1.25rem;
 
   > p::first-letter {
     text-transform: capitalize;
@@ -118,6 +119,10 @@ const PageTemplate: React.FunctionComponent<PageProps> = ({
             </p>
           )}
           <p>{mdx.frontmatter.year}</p>
+          <Snackbar
+            color={mdx.frontmatter.textcolor}
+            categories={mdx.frontmatter.categories}
+          />
         </Colophon>
       </Sidebar>
       <Main
@@ -150,6 +155,7 @@ export const pageQuery = graphql`
         clienturl
         subtitle
         description
+        categories
       }
     }
   }
