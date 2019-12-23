@@ -33,8 +33,6 @@ type PageProps = {
 type Mainprops = {
   backgroundcolor: string
   textcolor: string
-  linkcolor: string
-  linkhovercolor: string
 }
 
 const Main = styled.main<Mainprops>`
@@ -71,24 +69,6 @@ const Main = styled.main<Mainprops>`
     margin-bottom: 4rem;
     max-width: 100%;
   }
-
-  a {
-    color: hsl(${props => props.linkcolor || "200, 100%, 35%"});
-    background-image: linear-gradient(
-      180deg,
-      hsla(${props => props.linkcolor || "200, 100%, 35%"}, 0.25) 0,
-      hsla(${props => props.linkcolor || "200, 100%, 35%"}, 0.25)
-    );
-
-    &:hover {
-      color: hsl(${props => props.linkhovercolor || "200, 100%, 35%"});
-      background-image: linear-gradient(
-        180deg,
-        hsla(${props => props.linkhovercolor || "200, 100%, 35%"}, 0.25) 0,
-        hsla(${props => props.linkhovercolor || "200, 100%, 35%"}, 0.25)
-      );
-    }
-  }
 `
 
 const Colophon = styled.div`
@@ -103,7 +83,10 @@ const PageTemplate: React.FunctionComponent<PageProps> = ({
   data: { mdx },
 }) => {
   return (
-    <Layout>
+    <Layout
+      linkcolor={mdx.frontmatter.linkcolor}
+      linkhovercolor={mdx.frontmatter.linkhovercolor}
+    >
       <Meta title={mdx.frontmatter.title} />
       <Sidebar
         backgroundcolor={mdx.frontmatter.sidebarcolor}
@@ -140,8 +123,6 @@ const PageTemplate: React.FunctionComponent<PageProps> = ({
       <Main
         backgroundcolor={mdx.frontmatter.backgroundcolor}
         textcolor={mdx.frontmatter.textcolor}
-        linkcolor={mdx.frontmatter.linkcolor}
-        linkhovercolor={mdx.frontmatter.linkhovercolor}
       >
         <h1>{mdx.frontmatter.title}</h1>
         <MDXRenderer>{mdx.body}</MDXRenderer>

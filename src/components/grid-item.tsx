@@ -30,6 +30,7 @@ const GridCell = styled(Link)<GridCellProps>`
   position: relative;
   min-height: 100vw;
   background: hsl(${props => props.backgroundcolor || "0, 0%, 0%"});
+  background-image: none;
   color: hsl(${props => props.color || "0, 0%, 100%"});
 
   &:hover {
