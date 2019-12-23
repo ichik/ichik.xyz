@@ -93,6 +93,10 @@ const Main = styled.main<Mainprops>`
 
 const Colophon = styled.div`
   padding: 0 1.25rem 2rem 1.25rem;
+
+  > p::first-letter {
+    text-transform: capitalize;
+  }
 `
 
 const PageTemplate: React.FunctionComponent<PageProps> = ({
