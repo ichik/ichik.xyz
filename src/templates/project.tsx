@@ -40,7 +40,7 @@ const Main = styled.main<Mainprops>`
   display: flex;
   flex-flow: column;
   align-items: center;
-  padding: 4rem 1rem;
+  padding: 3rem 1rem;
   width: 100vw;
   overflow-x: hidden;
 
