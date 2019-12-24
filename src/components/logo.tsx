@@ -32,7 +32,7 @@ const Shield = styled.div<ShieldProps>`
 
     > span {
       display: block;
-      padding: 0.75rem 1.5rem;
+      padding: 0.75rem 1.75rem;
     }
 
     > span:first-child {
