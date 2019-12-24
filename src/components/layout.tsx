@@ -12,7 +12,7 @@ type GlobalStyle = {
   linkhovercolor: string
 }
 
-const GlobalStyles = createGlobalStyle<GlobalStyle>`
+export const GlobalStyles = createGlobalStyle<GlobalStyle>`
   ${reset}
   ::selection {
     background-color: hsl(200, 100%, 80%);
