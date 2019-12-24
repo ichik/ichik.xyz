@@ -75,7 +75,7 @@ const Meta = styled.div`
   right: 0;
   bottom: 0;
   left: 0;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 1rem 0 1rem;
 
   > h2 {
     display: inline-block;

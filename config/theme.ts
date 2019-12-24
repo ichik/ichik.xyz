@@ -20,7 +20,7 @@ const theme: ThemeShape = {
   },
   fontSizes: {
     root: "16px",
-    h1: "2.488rem",
+    h1: "2.074rem",
     h2: "2.074rem",
   },
   fontWeights: {

@@ -3,8 +3,8 @@ import { graphql } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import styled from "styled-components"
 import Layout from "../components/layout"
-import Sidebar from "../components/sidebar"
-import HomeButton from "../components/homebutton"
+import Sidebar, { Colophon } from "../components/sidebar"
+import Logo from "../components/logo"
 import Snackbar from "../components/snackbar"
 import Meta from "../components/meta"
 
@@ -72,14 +72,6 @@ const Main = styled.main<Mainprops>`
   }
 `
 
-const Colophon = styled.div`
-  padding: 1.25rem;
-
-  > p::first-letter {
-    text-transform: capitalize;
-  }
-`
-
 const PageTemplate: React.FunctionComponent<PageProps> = ({
   data: { mdx },
 }) => {
@@ -93,13 +85,7 @@ const PageTemplate: React.FunctionComponent<PageProps> = ({
         backgroundcolor={mdx.frontmatter.sidebarcolor}
         color={mdx.frontmatter.textcolor}
       >
-        <HomeButton
-          color={mdx.frontmatter.sidebarcolor}
-          backgroundcolor={mdx.frontmatter.linkcolor}
-          to="/"
-        >
-          Open Home Page
-        </HomeButton>
+        <Logo />
         <Colophon>
           {mdx.frontmatter.client ? (
             mdx.frontmatter.clienturl ? (
@@ -129,7 +115,7 @@ const PageTemplate: React.FunctionComponent<PageProps> = ({
         backgroundcolor={mdx.frontmatter.backgroundcolor}
         textcolor={mdx.frontmatter.textcolor}
       >
-        <h1>{mdx.frontmatter.title}</h1>
+        <h2>{mdx.frontmatter.title}</h2>
         <MDXRenderer>{mdx.body}</MDXRenderer>
       </Main>
     </Layout>

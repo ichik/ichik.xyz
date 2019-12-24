@@ -3,7 +3,8 @@ import { graphql } from "gatsby"
 import Image from "gatsby-image"
 import Meta from "../components/meta"
 import Layout from "../components/layout"
-import Sidebar from "../components/sidebar"
+import Sidebar, { Colophon } from "../components/sidebar"
+import Logo from "../components/logo"
 import Projects from "../components/projects"
 import GridItem from "../components/grid-item"
 import { ChildImageSharp } from "../types"
@@ -50,19 +51,21 @@ const Index: React.FunctionComponent<PageProps> = ({ data }) => {
   return (
     <Layout>
       <Meta />
-      <Sidebar index>
-        <h1>{data.site.siteMetadata.author}</h1>
-        <p>{data.site.siteMetadata.intro}</p>
-        <p>
-          Send enquiries at{" "}
-          <a href={"mailto:" + data.site.siteMetadata.email}>
-            {data.site.siteMetadata.email}
-          </a>
-        </p>
-        <Image
-          fluid={data.photo.childImageSharp.fluid}
-          alt={data.site.siteMetadata.author}
-        />
+      <Sidebar>
+        <Logo index />
+        <Colophon>
+          <p>{data.site.siteMetadata.intro}</p>
+          <p>
+            Send enquiries at{" "}
+            <a href={"mailto:" + data.site.siteMetadata.email}>
+              {data.site.siteMetadata.email}
+            </a>
+          </p>
+          <Image
+            fluid={data.photo.childImageSharp.fluid}
+            alt={data.site.siteMetadata.author}
+          />
+        </Colophon>
       </Sidebar>
       <Projects>
         {projects.map(({ node: project }) => (
