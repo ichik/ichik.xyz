@@ -85,7 +85,11 @@ const PageTemplate: React.FunctionComponent<PageProps> = ({
         backgroundcolor={mdx.frontmatter.sidebarcolor}
         color={mdx.frontmatter.textcolor}
       >
-        <Logo />
+        <Logo
+          maincolor={mdx.frontmatter.linkcolor}
+          cutoutcolor={mdx.frontmatter.sidebarcolor}
+          hovercolor={mdx.frontmatter.linkhovercolor}
+        />
         <Colophon>
           {mdx.frontmatter.client ? (
             mdx.frontmatter.clienturl ? (
