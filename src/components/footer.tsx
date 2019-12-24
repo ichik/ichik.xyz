@@ -71,16 +71,30 @@ export default () => {
         &copy; {data.site.siteMetadata.author}, {new Date().getFullYear()}
       </p>
       <Linklist>
-        <a href={`https://dribbble.com/${data.site.siteMetadata.dribbble}`}>
+        <a
+          href={`https://dribbble.com/${data.site.siteMetadata.dribbble}`}
+          aria-label={`View ${data.site.siteMetadata.author}'s Dribbble profile`}
+        >
           Dribbble
         </a>
-        <a href={`https://github.com/${data.site.siteMetadata.github}`}>
+        <a
+          href={`https://github.com/${data.site.siteMetadata.github}`}
+          aria-label={`View ${data.site.siteMetadata.author}'s GitHub profile`}
+        >
           GitHub
         </a>
-        <a href={`https://linkedin.com/in/${data.site.siteMetadata.linkedin}`}>
+        <a
+          href={`https://linkedin.com/in/${data.site.siteMetadata.linkedin}`}
+          aria-label={`View ${data.site.siteMetadata.author}'s LinkedIn profile`}
+        >
           LinkedIn
         </a>
-        <a href="/CV.pdf">CV</a>
+        <a
+          href="/CV.pdf"
+          aria-label={`Download ${data.site.siteMetadata.author}'s CV`}
+        >
+          CV
+        </a>
       </Linklist>
     </Footer>
   )
