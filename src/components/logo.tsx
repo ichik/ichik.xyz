@@ -2,6 +2,15 @@ import React from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
 
+const Logolink = styled(Link)`
+  background: none;
+  max-width: 20rem;
+
+  &:hover {
+    background: none;
+  }
+`
+
 type ShieldProps = {
   maincolor?: string
   cutoutcolor?: string
@@ -10,7 +19,6 @@ type ShieldProps = {
 
 const Shield = styled.div<ShieldProps>`
   padding: 0 1.25rem;
-  max-width: 20rem;
   margin: 0 0 2rem 0;
 
   > h1 {
@@ -33,7 +41,7 @@ const Shield = styled.div<ShieldProps>`
       border-radius: 0 0.6rem 0 0;
     }
 
-    &:hover {
+    ${Logolink}:hover & {
       border-color: hsl(${props => props.hovercolor || "0, 0%, 20%"});
       color: hsl(${props => props.hovercolor || "0, 0%, 20%"});
 
@@ -56,14 +64,6 @@ const Lockup: React.FunctionComponent<ShieldProps> = props => (
     </h1>
   </Shield>
 )
-
-const Logolink = styled(Link)`
-  background: none;
-
-  &:hover {
-    background: none;
-  }
-`
 
 type LogoProps = {
   index?: boolean
