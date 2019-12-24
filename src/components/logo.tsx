@@ -20,6 +20,7 @@ type ShieldProps = {
 const Shield = styled.div<ShieldProps>`
   padding: 0 1.25rem;
   margin: 0 0 2rem 0;
+  max-width: 20rem;
 
   > h1 {
     border: 0.25rem solid hsl(${props => props.maincolor || "0, 0%, 0%"});
