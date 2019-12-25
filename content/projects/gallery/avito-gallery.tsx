@@ -1,10 +1,10 @@
 import React from "react"
 import styled from "styled-components"
 
-const iphone = require("./avito-gallery-assets/iphone-wireframe.png")
-const mp4 = require("./avito-gallery-assets/avito-gallery-screencap.mp4")
-const webm = require("./avito-gallery-assets/avito-gallery-screencap.webm")
-const poster = require("./avito-gallery-assets/gallery.jpg")
+const iphone = require("./iphone-wireframe.png")
+const mp4 = require("./screencap.mp4")
+const webm = require("./screencap.webm")
+const poster = require("./gallery.jpg")
 
 const Player = styled.div`
   background: #fff url(${iphone}) 0 0 / 384px 804px no-repeat;
