@@ -19,6 +19,7 @@ const AvitoGallery = () => (
       autoPlay
       loop
       muted
+      playsinline
       width="320"
       height="568"
       poster={poster}
