@@ -13,11 +13,10 @@ const Sidebar = styled.div<SidebarProps>`
   padding-top: 2rem;
   background: hsl(${props => props.backgroundcolor || "0, 0%, 98%"});
   color: hsl(${props => props.color || "0, 0%, 0%"});
-  @media (min-width: ${props => props.theme.breakpoints.tablet}) {
-    align-items: normal;
-  }
+
   @media (min-width: ${props => props.theme.breakpoints.tabletHorizontal}) {
     position: fixed;
+    align-items: normal;
     height: 100%;
     width: ${props => props.theme.sidebar};
   }
@@ -39,16 +38,6 @@ export const Colophon = styled.div`
 
   > .gatsby-image-wrapper {
     max-width: 400px;
-
-    @media (min-width: ${props => props.theme.breakpoints.tablet}) {
-      margin-left: 55%;
-      margin-top: -30%;
-    }
-
-    @media (min-width: ${props => props.theme.breakpoints.tabletHorizontal}) {
-      margin-left: 0;
-      margin-top: 0;
-    }
   }
 
   > p::first-letter {
