@@ -7,9 +7,11 @@ const webm = require("./screencap.webm")
 const poster = require("./gallery.jpg")
 
 const Player = styled.div`
-  background: #fff url(${iphone}) 0 0 / 384px 804px no-repeat;
-  padding: 120px 30px 116px 34px;
-  margin: 40px auto 60px auto;
+  @media (min-width: 388px) {
+    background: #fff url(${iphone}) 0 0 / 384px 804px no-repeat;
+    padding: 120px 30px 116px 34px;
+    margin: 40px auto 60px auto;
+  }
 `
 
 const AvitoGallery = () => (
