@@ -32,6 +32,7 @@ const GridCell = styled(Link)<GridCellProps>`
   background: hsl(${props => props.backgroundcolor || "0, 0%, 0%"});
   background-image: none;
   color: hsl(${props => props.color || "0, 0%, 100%"});
+  z-index: 1;
 
   &:hover {
     background: hsl(${props => props.backgroundcolor || "0, 0%, 0%"});
@@ -41,6 +42,11 @@ const GridCell = styled(Link)<GridCellProps>`
       transform: translate3d(104%, 0, 0);
       opacity: 1;
     }
+  }
+
+  &:focus {
+    outline: 0.5rem solid hsla(${props => props.color || "0, 0%, 100%"}, 20%);
+    outline-offset: -0.5rem;
   }
 
   @media (min-width: ${props => props.theme.breakpoints.tablet}) {
@@ -62,6 +68,7 @@ const GridCell = styled(Link)<GridCellProps>`
     right: 0;
     bottom: 0;
     left: 0;
+    z-index: -1;
   }
 `
 
