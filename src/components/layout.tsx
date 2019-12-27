@@ -5,7 +5,7 @@ import theme from "../../config/theme"
 import Footer from "./footer"
 import "@openfonts/fjalla-one_latin"
 import "@openfonts/cantarell_latin"
-import "@openfonts/fira-mono_latin"
+import "@openfonts/fira-mono_all"
 
 type GlobalStyle = {
   linkcolor: string

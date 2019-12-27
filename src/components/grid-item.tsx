@@ -81,20 +81,20 @@ const Meta = styled.div`
     display: inline-block;
     width: fit-content;
     position: relative;
-  }
 
-  > h2::after {
-    content: "→";
-    font-family: "Fira Mono", sans-serif;
-    position: absolute;
-    height: 1rem;
-    width: 100%;
-    margin-top: 0.125rem;
-    right: 0;
-    transform: translate3d(50%, 0, 0);
-    opacity: 0;
-    transition: transform 0.4s, opacity 0.4s;
-    transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+    &::after {
+      content: "→";
+      font-family: "Fira Mono", monospace;
+      position: absolute;
+      height: 1rem;
+      width: 100%;
+      margin-top: 0.125rem;
+      right: 0;
+      transform: translate3d(50%, 0, 0);
+      opacity: 0;
+      transition: transform 0.4s, opacity 0.4s;
+      transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+    }
   }
 
   &:hover {
