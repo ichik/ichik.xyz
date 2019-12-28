@@ -70,6 +70,10 @@ const Main = styled.main<Mainprops>`
     margin-bottom: 4rem;
     max-width: 100%;
   }
+
+  h3 {
+    margin-top: 6rem;
+  }
 `
 
 const PageTemplate: React.FunctionComponent<PageProps> = ({
