@@ -63,7 +63,7 @@ const Main = styled.main<Mainprops>`
 
   > .gatsby-resp-image-wrapper {
     width: 100%;
-    margin: 2rem 0 4rem 0;
+    margin: 1rem 0 4rem 0;
   }
 
   > iframe {
