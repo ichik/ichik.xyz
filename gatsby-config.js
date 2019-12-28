@@ -69,6 +69,9 @@ micro-animations to smart color palette choices.`,
         short_name: `ichik.xyz`,
         start_url: `/`,
         icon: `src/images/site-icon.png`,
+        theme_color: `hsl(60, 9%, 6%)`,
+        background_color: `hsl(0, 0%, 100%)`,
+        display: `minimal-ui`,
         icons: [
           {
             src: `/assets/favicon.ico`,
