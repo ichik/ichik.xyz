@@ -78,6 +78,10 @@ micro-animations to smart color palette choices.`,
             sizes: `16x16`,
           },
           {
+            src: `/assets/favicon.ico`,
+            sizes: `32x32`,
+          },
+          {
             src: `/assets/icon-192.png`,
             sizes: `192x192`,
             type: `image/png`,
