@@ -71,16 +71,16 @@ micro-animations to smart color palette choices.`,
         icon: `src/images/site-icon.png`,
         icons: [
           {
-            src: `assets/favicon.ico`,
+            src: `/assets/favicon.ico`,
             sizes: `16x16`,
           },
           {
-            src: `assets/icon-192.png`,
+            src: `/assets/icon-192.png`,
             sizes: `192x192`,
             type: `image/png`,
           },
           {
-            src: `assets/icon-512.png`,
+            src: `/assets/icon-512.png`,
             sizes: `512x512`,
             type: `image/png`,
           },
