@@ -20,7 +20,7 @@ type ScreencastProps = {
   new?: boolean
 }
 
-const Screencast: React.FunctionComponent<ScreencastProps> = props =>
+const SketchVsPhotoshop: React.FunctionComponent<ScreencastProps> = props =>
   props.sketch ? (
     props.new ? (
       <Wrapper>
@@ -64,4 +64,4 @@ const Screencast: React.FunctionComponent<ScreencastProps> = props =>
     </Wrapper>
   )
 
-export default Screencast
+export default SketchVsPhotoshop
