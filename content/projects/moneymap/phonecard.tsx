@@ -69,7 +69,6 @@ const BackSlider = styled(FrontSlider)`
 `
 
 const Phonecard = () => {
-  console.log(Background)
   return (
     <Wrapper>
       <Card>
