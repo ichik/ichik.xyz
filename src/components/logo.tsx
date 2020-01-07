@@ -2,24 +2,30 @@ import React from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
 
-const Logolink = styled(Link)`
+type LogoProps = {
+  index?: boolean
+  maincolor?: string
+  cutoutcolor?: string
+  hovercolor?: string
+}
+
+const Logolink = styled(Link)<LogoProps>`
   background: none;
   max-width: 20rem;
 
   &:hover {
     background: none;
   }
+
+  &:focus {
+    outline: dotted 0.125rem hsl(${props => props.hovercolor || "0, 0%, 100%"});
+    outline-offset: -0.5rem;
+  }
 `
 
-type ShieldProps = {
-  maincolor?: string
-  cutoutcolor?: string
-  hovercolor?: string
-}
-
-const Shield = styled.div<ShieldProps>`
+const Shield = styled.div<LogoProps>`
   padding: 0 1.25rem;
-  margin: 0 0 2rem 0;
+  margin: 1rem 0;
   max-width: 20rem;
 
   > h1 {
@@ -53,7 +59,7 @@ const Shield = styled.div<ShieldProps>`
   }
 `
 
-const Lockup: React.FunctionComponent<ShieldProps> = props => (
+const Lockup: React.FunctionComponent<LogoProps> = props => (
   <Shield
     maincolor={props.maincolor}
     cutoutcolor={props.cutoutcolor}
@@ -66,18 +72,11 @@ const Lockup: React.FunctionComponent<ShieldProps> = props => (
   </Shield>
 )
 
-type LogoProps = {
-  index?: boolean
-  maincolor?: string
-  cutoutcolor?: string
-  hovercolor?: string
-}
-
 const Logo: React.FunctionComponent<LogoProps> = props =>
   props.index ? (
     <Lockup />
   ) : (
-    <Logolink to="/">
+    <Logolink maincolor={props.hovercolor} to="/">
       <Lockup
         maincolor={props.maincolor}
         cutoutcolor={props.cutoutcolor}

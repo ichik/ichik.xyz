@@ -10,7 +10,7 @@ const Sidebar = styled.div<SidebarProps>`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding-top: 2rem;
+  padding-top: 1rem;
   background: hsl(${props => props.backgroundcolor || "0, 0%, 98%"});
   color: hsl(${props => props.color || "0, 0%, 0%"});
 
