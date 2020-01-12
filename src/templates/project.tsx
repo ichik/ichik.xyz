@@ -84,7 +84,13 @@ const PageTemplate: React.FunctionComponent<PageProps> = ({
       linkcolor={mdx.frontmatter.linkcolor}
       linkhovercolor={mdx.frontmatter.linkhovercolor}
     >
-      <Meta title={mdx.frontmatter.title} />
+      <Meta
+        title={
+          mdx.frontmatter.client
+            ? mdx.frontmatter.title + " for " + mdx.frontmatter.client
+            : mdx.frontmatter.title + " " + mdx.frontmatter.subtitle
+        }
+      />
       <Sidebar
         backgroundcolor={mdx.frontmatter.sidebarcolor}
         color={mdx.frontmatter.textcolor}
