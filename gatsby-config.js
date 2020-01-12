@@ -9,6 +9,7 @@ module.exports = {
 micro-animations to smart color palette choices.`,
     email: `hi@ichik.xyz`,
     linkedin: `ichik`,
+    banner: `./banner.jpg`,
     github: `ichik`,
     dribbble: `ichik`,
     ogLanguage: `en_US`,

@@ -6,7 +6,7 @@ type Props = {} & typeof defaultProps
 
 const defaultProps = {
   title: "",
-  desc: "",
+  description: "",
   banner: "",
   pathname: "",
   node: {
@@ -15,23 +15,22 @@ const defaultProps = {
   },
 }
 
-const Meta = ({ title, desc, banner, pathname, node }: Props) => {
+const Meta = ({ title, banner, pathname, description }: Props) => {
   const { site } = useStaticQuery(query)
   const {
-    buildTime,
     siteMetadata: {
       siteUrl,
       defaultTitle,
       defaultDescription,
+      defaultBanner,
       siteLanguage,
-      ogLanguage,
       author,
     },
   } = site
   const seo = {
     title: title || defaultTitle,
-    description: desc || defaultDescription,
-    // image: `${siteUrl}${banner || defaultBanner}`,
+    description: description || defaultDescription,
+    image: `${banner || defaultBanner}`,
     url: `${siteUrl}${pathname || ""}`,
   }
   return (
@@ -39,6 +38,7 @@ const Meta = ({ title, desc, banner, pathname, node }: Props) => {
       <html lang={siteLanguage} />
       <meta name="description" content={seo.description} />
       <meta name="author" content={author} />
+      <meta name="image" content={seo.image} />
     </Helmet>
   )
 }
@@ -54,9 +54,9 @@ const query = graphql`
       siteMetadata {
         siteUrl
         defaultTitle: title
+        defaultBanner: banner
         defaultDescription: description
         siteLanguage
-        ogLanguage
         author
       }
     }

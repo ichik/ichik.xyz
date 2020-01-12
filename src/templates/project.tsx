@@ -22,6 +22,13 @@ type PageProps = {
         year: string
         description: string
         categories: string[]
+        cover: {
+          childImageSharp: {
+            resize: {
+              src: string
+            }
+          }
+        }
 
         client?: string
         clienturl?: string
@@ -90,6 +97,15 @@ const PageTemplate: React.FunctionComponent<PageProps> = ({
             ? mdx.frontmatter.title + " for " + mdx.frontmatter.client
             : mdx.frontmatter.title + " " + mdx.frontmatter.subtitle
         }
+        description={
+          mdx.frontmatter.client
+            ? "For " +
+              mdx.frontmatter.client +
+              ", " +
+              mdx.frontmatter.description
+            : mdx.frontmatter.subtitle + ", " + mdx.frontmatter.description
+        }
+        banner={mdx.frontmatter.cover.childImageSharp.resize.src}
       />
       <Sidebar
         backgroundcolor={mdx.frontmatter.sidebarcolor}
@@ -156,6 +172,13 @@ export const pageQuery = graphql`
         subtitle
         description
         categories
+        cover {
+          childImageSharp {
+            resize(width: 1200, height: 675, quality: 80) {
+              src
+            }
+          }
+        }
       }
     }
   }
