@@ -15,7 +15,7 @@ const Projects = styled.main`
   @media (min-width: ${props => props.theme.breakpoints.tabletHorizontal}) {
     grid-column-start: 2;
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(auto-fill, 40vw);
+    grid-template-rows: repeat(auto-fill, 60vw);
   }
 
   @media (min-width: ${props => props.theme.breakpoints.desktop}) {

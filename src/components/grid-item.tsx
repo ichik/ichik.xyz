@@ -51,15 +51,15 @@ const GridCell = styled(Link)<GridCellProps>`
 
   @media (min-width: ${props => props.theme.breakpoints.tablet}) {
     min-height: 50vw;
+    grid-column-end: ${props => (props.size == "big" ? "span 2" : "span 1")};
   }
 
   @media (min-width: ${props => props.theme.breakpoints.tabletHorizontal}) {
-    min-height: 40vw;
+    min-height: 60vw;
   }
 
   @media (min-width: ${props => props.theme.breakpoints.desktop}) {
     min-height: 25vw;
-    grid-column-end: ${props => (props.size == "big" ? "span 2" : "span 1")};
   }
 
   > .gatsby-image-wrapper {
