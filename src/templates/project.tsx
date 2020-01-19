@@ -22,7 +22,7 @@ type PageProps = {
         year: string
         description: string
         categories: string[]
-        cover: {
+        banner: {
           childImageSharp: {
             resize: {
               src: string
@@ -105,7 +105,7 @@ const PageTemplate: React.FunctionComponent<PageProps> = ({
               mdx.frontmatter.description
             : mdx.frontmatter.subtitle + ", " + mdx.frontmatter.description
         }
-        banner={mdx.frontmatter.cover.childImageSharp.resize.src}
+        banner={mdx.frontmatter.banner.childImageSharp.resize.src}
       />
       <Sidebar
         backgroundcolor={mdx.frontmatter.sidebarcolor}
@@ -172,7 +172,7 @@ export const pageQuery = graphql`
         subtitle
         description
         categories
-        cover {
+        banner {
           childImageSharp {
             resize(width: 1200, height: 675, quality: 80) {
               src

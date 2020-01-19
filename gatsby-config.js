@@ -9,9 +9,10 @@ module.exports = {
 micro-animations to smart color palette choices.`,
     email: `hi@ichik.xyz`,
     linkedin: `ichik`,
-    banner: `./banner.jpg`,
+    banner: `/banner.jpg`,
     github: `ichik`,
     dribbble: `ichik`,
+    twitter: `@ichikumer`,
     ogLanguage: `en_US`,
   },
   plugins: [

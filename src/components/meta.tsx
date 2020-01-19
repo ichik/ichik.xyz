@@ -24,7 +24,9 @@ const Meta = ({ title, banner, pathname, description }: Props) => {
       defaultDescription,
       defaultBanner,
       siteLanguage,
+      ogLanguage,
       author,
+      twitter,
     },
   } = site
   const seo = {
@@ -39,6 +41,16 @@ const Meta = ({ title, banner, pathname, description }: Props) => {
       <meta name="description" content={seo.description} />
       <meta name="author" content={author} />
       <meta name="image" content={seo.image} />
+      <meta property="og:url" content={seo.url} />
+      <meta property="og:locale" content={ogLanguage} />
+      <meta property="og:title" content={seo.title} />
+      <meta property="og:description" content={seo.description} />
+      <meta property="og:image" content={seo.image} />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:creator" content={twitter} />
+      <meta name="twitter:title" content={seo.title} />}
+      <meta name="twitter:description" content={seo.description} />
+      <meta name="twitter:image" content={seo.image} />
     </Helmet>
   )
 }
@@ -57,7 +69,9 @@ const query = graphql`
         defaultBanner: banner
         defaultDescription: description
         siteLanguage
+        ogLanguage
         author
+        twitter
       }
     }
   }
