@@ -23,11 +23,12 @@ type PageProps = {
               slug: string
               sortindex: number
               title: string
+              year: string
 
               client?: string
               size?: string
               subtitle?: string
-              year: string
+              unpublished?: boolean
 
               cover: ChildImageSharp
             }
@@ -68,21 +69,24 @@ const Index: React.FunctionComponent<PageProps> = ({ data }) => {
         </Colophon>
       </Sidebar>
       <Projects>
-        {projects.map(({ node: project }) => (
-          <GridItem
-            backgroundcolor={project.frontmatter.coverbackgroundcolor}
-            categories={project.frontmatter.categories}
-            client={project.frontmatter.client}
-            color={project.frontmatter.coverforegroundcolor}
-            image={project.frontmatter.cover}
-            key={project.id}
-            size={project.frontmatter.size}
-            subtitle={project.frontmatter.subtitle}
-            title={project.frontmatter.title}
-            to={project.frontmatter.slug}
-            year={project.frontmatter.year}
-          />
-        ))}
+        {projects.map(
+          ({ node: project }) =>
+            !project.frontmatter.unpublished && (
+              <GridItem
+                backgroundcolor={project.frontmatter.coverbackgroundcolor}
+                categories={project.frontmatter.categories}
+                client={project.frontmatter.client}
+                color={project.frontmatter.coverforegroundcolor}
+                image={project.frontmatter.cover}
+                key={project.id}
+                size={project.frontmatter.size}
+                subtitle={project.frontmatter.subtitle}
+                title={project.frontmatter.title}
+                to={project.frontmatter.slug}
+                year={project.frontmatter.year}
+              />
+            )
+        )}
       </Projects>
     </Layout>
   )
@@ -109,6 +113,7 @@ export const pageQuery = graphql`
             subtitle
             title
             year
+            unpublished
             cover {
               childImageSharp {
                 fluid(quality: 95, maxWidth: 1200) {
