@@ -32,7 +32,7 @@ const Meta = ({ title, banner, pathname, description }: Props) => {
   const seo = {
     title: title || defaultTitle,
     description: description || defaultDescription,
-    image: `${banner || defaultBanner}`,
+    image: `${siteUrl}${banner || defaultBanner}`,
     url: `${siteUrl}${pathname || ""}`,
   }
   return (
