@@ -5,7 +5,9 @@ const mp4 = require("./textselection.mp4")
 const poster = require("./textselection.jpg")
 
 const Player = styled.div`
-  max-width: 100%;
+  > video {
+    max-width: 100%;
+  }
 `
 
 const Textselection = () => (
