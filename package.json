@@ -10,7 +10,7 @@
     "@openfonts/cantarell_latin": "^1.44.0",
     "@openfonts/fira-mono_all": "^1.44.0",
     "@openfonts/fjalla-one_latin": "^1.44.0",
-    "babel-plugin-styled-components": "^1.10.6",
+    "babel-plugin-styled-components": "^1.10.7",
     "gatsby": "^2.19.5",
     "gatsby-image": "^2.2.39",
     "gatsby-plugin-manifest": "^2.2.38",
