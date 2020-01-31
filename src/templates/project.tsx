@@ -92,11 +92,7 @@ const PageTemplate: React.FunctionComponent<PageProps> = ({
       linkhovercolor={mdx.frontmatter.linkhovercolor}
     >
       <Meta
-        title={
-          mdx.frontmatter.client
-            ? mdx.frontmatter.title + " for " + mdx.frontmatter.client
-            : mdx.frontmatter.title + " " + mdx.frontmatter.subtitle
-        }
+        title={mdx.frontmatter.title}
         description={
           mdx.frontmatter.client
             ? "For " +
