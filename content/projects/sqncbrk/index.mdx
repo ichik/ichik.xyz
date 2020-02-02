@@ -21,6 +21,7 @@ import Disclaimer from "./disclaimer"
 import Newlogo from "./newlogo"
 import Loadmore from "./loadmore"
 import Search from "./search"
+import Footer from "./footer"
 
 <Disclaimer>
   This case study describes the most recent redesign of{" "}
@@ -45,6 +46,14 @@ The general layout of the page was refined and re-done with CSS grid. The asymme
 One of the best things to come out of this redesign was finally getting rid of [hamburger menu](https://en.wikipedia.org/wiki/Hamburger_button) which was there for the first two versions of SqncBrk. I always disliked it for all its UX shortcomings, but couldn't quite figure out how else to provide top-level links to two most important articles on the website ([About](https://sqncbrk.com/about/) and [On Metroidvanias](https://sqncbrk.com/metroidvanias/)). The solution was simply letting go of the idea of their importance and realizing that the key interaction in that menu was search which now was a key action. Links to the two articles were just attached to it as suggestions.
 
 <Search />
+
+Search results page was revamped to follow suit. Another minor accessibility fix that was introduced — a prompt on how to trigger search request right underneath the huge prominent search input.
+
+![Search results page](./searchresults.png)
+
+The last piece of eye-candy was all new “slide-in” footer. It utilized the same grid as everything else and just a tiny bit of creative CSS for pleasant visual effect.
+
+<Footer />
 
 Performance of the site was also vastly improved with this rewrite. While it was good previosly, there were still a few things to improve. This time having more knowledge about optimization techniques and component-based CSS model I managed to achieve a [perfect score](https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fsqncbrk.com&tab=mobile) in Google's Pagespeed Insights. Fast loading time was a win for my readers as much as it was a reason to be proud of my developers' prowess.
 
