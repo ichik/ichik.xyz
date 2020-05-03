@@ -7,20 +7,24 @@ const Projects = styled.main`
   grid-template-rows: repeat(auto-fill, 100vw);
   overflow-x: hidden;
 
-  @media (min-width: ${props => props.theme.breakpoints.tablet}) {
+  @media (min-width: ${(props) => props.theme.breakpoints.tablet}) {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(auto-fill, 50vw);
   }
 
-  @media (min-width: ${props => props.theme.breakpoints.tabletHorizontal}) {
+  @media (min-width: ${(props) => props.theme.breakpoints.tabletHorizontal}) {
     grid-column-start: 2;
-    /* grid-template-columns: 1fr; */
     grid-template-rows: repeat(auto-fill, 30vw);
   }
 
-  @media (min-width: ${props => props.theme.breakpoints.desktop}) {
+  @media (min-width: ${(props) => props.theme.breakpoints.desktop}) {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(auto-fill, 25vw);
+  }
+
+  @media (min-width: ${(props) => props.theme.breakpoints.hd}) {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(auto-fill, 20vw);
   }
 `
 export default Projects

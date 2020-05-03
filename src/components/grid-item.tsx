@@ -29,14 +29,14 @@ type GridItemProps = {
 const GridCell = styled(Link)<GridCellProps>`
   position: relative;
   min-height: 100vw;
-  background: hsl(${props => props.backgroundcolor || "0, 0%, 0%"});
+  background: hsl(${(props) => props.backgroundcolor || "0, 0%, 0%"});
   background-image: none;
-  color: hsl(${props => props.color || "0, 0%, 100%"});
+  color: hsl(${(props) => props.color || "0, 0%, 100%"});
   z-index: 1;
 
   &:hover {
-    background: hsl(${props => props.backgroundcolor || "0, 0%, 0%"});
-    color: hsl(${props => props.color || "0, 0%, 100%"});
+    background: hsl(${(props) => props.backgroundcolor || "0, 0%, 0%"});
+    color: hsl(${(props) => props.color || "0, 0%, 100%"});
 
     > div h2::after {
       transform: translate3d(104%, 0, 0);
@@ -45,21 +45,25 @@ const GridCell = styled(Link)<GridCellProps>`
   }
 
   &:focus {
-    outline: 0.5rem solid hsla(${props => props.color || "0, 0%, 100%"}, 20%);
+    outline: 0.5rem solid hsla(${(props) => props.color || "0, 0%, 100%"}, 20%);
     outline-offset: -0.5rem;
   }
 
-  @media (min-width: ${props => props.theme.breakpoints.tablet}) {
+  @media (min-width: ${(props) => props.theme.breakpoints.tablet}) {
     min-height: 50vw;
-    grid-column-end: ${props => (props.size == "big" ? "span 2" : "span 1")};
+    grid-column-end: ${(props) => (props.size == "big" ? "span 2" : "span 1")};
   }
 
-  @media (min-width: ${props => props.theme.breakpoints.tabletHorizontal}) {
+  @media (min-width: ${(props) => props.theme.breakpoints.tabletHorizontal}) {
     min-height: 30vw;
   }
 
-  @media (min-width: ${props => props.theme.breakpoints.desktop}) {
+  @media (min-width: ${(props) => props.theme.breakpoints.desktop}) {
     min-height: 25vw;
+  }
+
+  @media (min-width: ${(props) => props.theme.breakpoints.hd}) {
+    min-height: 20vw;
   }
 
   > .gatsby-image-wrapper {
@@ -109,7 +113,7 @@ const Meta = styled.div`
   }
 `
 
-const GridItem: React.FunctionComponent<GridItemProps> = props => {
+const GridItem: React.FunctionComponent<GridItemProps> = (props) => {
   return (
     <GridCell
       aria-label={`View project "${props.title}"`}
