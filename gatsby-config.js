@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     siteLanguage: `en`,
-    siteUrl: `https://beta.ichik.xyz`,
+    siteUrl: `https://ichik.xyz`,
     title: `Portfolio of Vadim Mikhnov`,
     description: `Select case studies.`,
     author: `Vadim Mikhnov`,
