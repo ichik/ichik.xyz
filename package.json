@@ -2,7 +2,7 @@
   "name": "ichik.xyz",
   "private": true,
   "description": "Portfolio and personal website of Vadim Mikhnov",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "Vadim Mikhnov <ichikumer@gmail.com>",
   "dependencies": {
     "@mdx-js/mdx": "^1.6.1",
