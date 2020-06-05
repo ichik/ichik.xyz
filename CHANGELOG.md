@@ -1,8 +1,9 @@
+# 1.0.2
+
+- Updated footer layout
+- Changed starting breakpoints for mobile and vertical tablet layouts
+
 # 1.0.1a
-
-- Punctuation fixed in CV
-
-# 1.0.1
 
 - Minor errors fixed in CV
 

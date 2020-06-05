@@ -13,8 +13,8 @@ interface ThemeShape {
 
 const theme: ThemeShape = {
   breakpoints: {
-    tablet: "601px",
-    tabletHorizontal: "901px",
+    tablet: "600px",
+    tabletHorizontal: "900px",
     desktop: "1200px",
     hd: "1800px",
   },

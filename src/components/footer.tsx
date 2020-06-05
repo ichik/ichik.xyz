@@ -7,6 +7,7 @@ const Footer = styled.footer`
   padding: 2rem;
   display: flex;
   flex-direction: column;
+  align-items: center;
   color: hsl(60, 9%, 88%);
 
   a {
@@ -27,11 +28,11 @@ const Footer = styled.footer`
     }
   }
 
-  @media (min-width: ${props => props.theme.breakpoints.tablet}) {
+  @media (min-width: ${(props) => props.theme.breakpoints.tablet}) {
     padding: 4rem;
   }
 
-  @media (min-width: ${props => props.theme.breakpoints.tabletHorizontal}) {
+  @media (min-width: ${(props) => props.theme.breakpoints.tabletHorizontal}) {
     grid-column-start: 2;
   }
 `
@@ -42,6 +43,11 @@ const Linklist = styled.div`
   justify-content: space-between;
   max-width: 20rem;
   margin-top: 1rem;
+  gap: 1rem;
+
+  @media (min-width: ${(props) => props.theme.breakpoints.tablet}) {
+    gap: 2rem;
+  }
 `
 
 interface QueryResult {
