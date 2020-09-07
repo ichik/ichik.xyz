@@ -1,3 +1,7 @@
+# 1.0.3
+
+- Removed dead links from CV
+
 # 1.0.2
 
 - Updated footer layout
