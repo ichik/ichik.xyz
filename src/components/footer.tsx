@@ -80,18 +80,21 @@ export default () => {
         <a
           href={`https://dribbble.com/${data.site.siteMetadata.dribbble}`}
           aria-label={`View ${data.site.siteMetadata.author}'s Dribbble profile`}
+          rel="me"
         >
           Dribbble
         </a>
         <a
           href={`https://github.com/${data.site.siteMetadata.github}`}
           aria-label={`View ${data.site.siteMetadata.author}'s GitHub profile`}
+          rel="me"
         >
           GitHub
         </a>
         <a
           href={`https://linkedin.com/in/${data.site.siteMetadata.linkedin}`}
           aria-label={`View ${data.site.siteMetadata.author}'s LinkedIn profile`}
+          rel="me"
         >
           LinkedIn
         </a>
