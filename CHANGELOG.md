@@ -1,3 +1,7 @@
+# 1.0.4
+
+- Added `rel="me"` to social media links
+
 # 1.0.3
 
 - Removed dead links from CV
