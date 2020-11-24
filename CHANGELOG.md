@@ -1,3 +1,8 @@
+# 1.0.5
+
+- Netlify headers setup
+- Formatting updates to CV
+
 # 1.0.4
 
 - Added `rel="me"` to social media links

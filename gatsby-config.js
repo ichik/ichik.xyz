@@ -127,5 +127,6 @@ micro-animations to smart color palette choices.`,
       },
     },
     `gatsby-plugin-offline`,
+    `gatsby-plugin-netlify`,
   ],
 }
