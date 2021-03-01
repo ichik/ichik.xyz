@@ -20,7 +20,7 @@ type ScreencastProps = {
   new?: boolean
 }
 
-const SketchVsPhotoshop: React.FunctionComponent<ScreencastProps> = props =>
+const SketchVsPhotoshop: React.FunctionComponent<ScreencastProps> = (props) =>
   props.sketch ? (
     props.new ? (
       <Wrapper>
@@ -29,7 +29,7 @@ const SketchVsPhotoshop: React.FunctionComponent<ScreencastProps> = props =>
           autoPlay
           loop
           muted
-          playsinline
+          playsInline
           poster={sketchNewPoster}
         >
           <source src={sketchNew} type="video/mp4" />
@@ -42,7 +42,7 @@ const SketchVsPhotoshop: React.FunctionComponent<ScreencastProps> = props =>
           autoPlay
           loop
           muted
-          playsinline
+          playsInline
           poster={sketchOldPoster}
         >
           <source src={sketchOld} type="video/mp4" />

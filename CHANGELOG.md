@@ -1,3 +1,8 @@
+# 1.0.8
+
+- Dependency updates
+- Zenmate connection video re-made
+
 # 1.0.7
 
 - Dependency updates

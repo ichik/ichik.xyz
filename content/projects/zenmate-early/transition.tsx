@@ -12,7 +12,7 @@ const Player = styled.div`
 
 const Transition = () => (
   <Player>
-    <video preload="auto" autoPlay loop muted playsinline poster={poster}>
+    <video preload="auto" autoPlay loop muted playsInline poster={poster}>
       <source src={mp4} type="video/mp4" />
     </video>
   </Player>
