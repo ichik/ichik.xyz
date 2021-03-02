@@ -1,3 +1,8 @@
+# 1.0.9
+
+- Dependency updates
+- Zenmate connection video poster update
+
 # 1.0.8
 
 - Dependency updates
