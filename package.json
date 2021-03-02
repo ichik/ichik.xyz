@@ -2,7 +2,7 @@
   "name": "ichik.xyz",
   "private": true,
   "description": "Portfolio and personal website of Vadim Mikhnov",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "author": "Vadim Mikhnov <ichikumer@gmail.com>",
   "dependencies": {
     "@mdx-js/mdx": "^1.6.22",
@@ -11,7 +11,7 @@
     "@openfonts/fira-mono_all": "^1.44.2",
     "@openfonts/fjalla-one_latin": "^1.44.2",
     "babel-plugin-styled-components": "^1.12.0",
-    "gatsby": "^2.32.8",
+    "gatsby": "^2.32.9",
     "gatsby-image": "^2.10.0",
     "gatsby-plugin-manifest": "^2.11.0",
     "gatsby-plugin-mdx": "^1.9.0",
