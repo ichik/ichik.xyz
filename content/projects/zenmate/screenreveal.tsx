@@ -1,8 +1,8 @@
 import React from "react"
 import styled from "styled-components"
 
-const mp4 = require("./screenreveal.mp4")
-const poster = require("./screenreveal.jpg")
+import mp4 from "./screenreveal.mp4"
+import poster from "./screenreveal.jpg"
 
 const Wrapper = styled.div`
   > video {

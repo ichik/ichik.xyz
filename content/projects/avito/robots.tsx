@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 
-const gif = require("./robots.gif")
+import gif from "./robots.gif"
 
 const Wrapper = styled.div`
   > img {

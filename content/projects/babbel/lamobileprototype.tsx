@@ -1,8 +1,8 @@
 import React from "react"
 import styled from "styled-components"
 
-const mp4 = require("./lamobileprototype.mp4")
-const poster = require("./lamobileprototype.jpg")
+import mp4 from "./lamobileprototype.mp4"
+import poster from "./lamobileprototype.jpg"
 
 const Player = styled.div`
   max-width: 380px;

@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 
-const gif = require("./sidebar.gif")
+import gif from "./sidebar.gif"
 
 const Wrapper = styled.div`
   > img {
