@@ -1,3 +1,8 @@
+# X.X.X
+
+- Updated framework to Gatsby@3
+- Changed asset handling in projects to ES Modules imports
+
 # 1.0.9
 
 - Dependency updates
