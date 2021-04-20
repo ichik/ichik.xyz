@@ -160,5 +160,19 @@ micro-animations to smart color palette choices.`,
       },
     },
     `gatsby-plugin-robots-txt`,
+    {
+      resolve: `gatsby-plugin-humans-txt`,
+      options: {
+        team: [
+          {
+            Developer: `Vadim Mikhnov`,
+            GitHub: `ichik`,
+          },
+        ],
+        site: {
+          "Last update": `2021/4/20`,
+        },
+      },
+    },
   ],
 }
