@@ -1,4 +1,4 @@
-# X.X.X
+# 2.0.0
 
 - Updated framework to Gatsby@3
 - Changed asset handling in projects to ES Modules imports
@@ -6,8 +6,10 @@
 - Added configuration for NVM
 - Added FLoC opt-out headers to Netlify config
 - Added netlify-plugin-gatsby-cache to Netlify config for incremental builds
-- Better project titles (including client, subtitle etc.)
 - Added sitemap
+- Added robots.txt
+- Added humans.txt
+- Better project titles (including client, subtitle etc.)
 
 # 1.0.9
 
