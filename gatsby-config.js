@@ -159,5 +159,6 @@ micro-animations to smart color palette choices.`,
         createLinkInHead: true,
       },
     },
+    `gatsby-plugin-robots-txt`,
   ],
 }
