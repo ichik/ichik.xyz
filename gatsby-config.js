@@ -129,5 +129,35 @@ micro-animations to smart color palette choices.`,
     },
     `gatsby-plugin-offline`,
     `gatsby-plugin-netlify`,
+    {
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
+        query: `{
+          site {
+            siteMetadata {
+              siteUrl
+            }
+          }
+          allSitePage {
+            nodes {
+              path
+              context {
+                updated
+              }
+            }
+          }
+        }`,
+        resolveSiteUrl: ({ site }) => site.siteMetadata.siteUrl,
+        serialize: ({ site, allSitePage }) =>
+          allSitePage.nodes.map((node) => {
+            const { siteUrl } = site.siteMetadata
+            return {
+              url: `${siteUrl}${node.path}`,
+              lastmodISO: node.context.updated,
+            }
+          }),
+        createLinkInHead: true,
+      },
+    },
   ],
 }

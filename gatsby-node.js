@@ -12,6 +12,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             id
             frontmatter {
               slug
+              updated
             }
           }
         }
@@ -22,13 +23,13 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   if (result.errors) {
     reporter.panicOnBuild('🚨  ERROR: Loading "createPages" query')
   }
-  // Create blog post pages.
+
   const projects = result.data.allMdx.edges
   projects.forEach(({ node }, index) => {
     createPage({
       path: node.frontmatter.slug,
       component: path.resolve(`./src/templates/project.tsx`),
-      context: { id: node.id },
+      context: { id: node.id, updated: node.frontmatter.updated },
     })
   })
 }

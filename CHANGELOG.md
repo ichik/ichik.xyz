@@ -7,6 +7,7 @@
 - Added FLoC opt-out headers to Netlify config
 - Added netlify-plugin-gatsby-cache to Netlify config for incremental builds
 - Better project titles (including client, subtitle etc.)
+- Added sitemap
 
 # 1.0.9
 
