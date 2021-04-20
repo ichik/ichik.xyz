@@ -1,8 +1,8 @@
 import React from "react"
 import styled from "styled-components"
 
-const mp4 = require("./energyjourney.mp4")
-const poster = require("./energyjourney.jpg")
+import mp4 from "./energyjourney.mp4"
+import poster from "./energyjourney.jpg"
 
 const Player = styled.div`
   > video {

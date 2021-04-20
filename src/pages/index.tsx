@@ -1,12 +1,13 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Image from "gatsby-image"
+import { StaticImage } from "gatsby-plugin-image"
 import Meta from "../components/meta"
 import Layout from "../components/layout"
 import Sidebar, { Colophon } from "../components/sidebar"
 import Logo from "../components/logo"
 import Projects from "../components/projects"
 import GridItem from "../components/grid-item"
+
 import { ChildImageSharp } from "../types"
 
 type PageProps = {
@@ -43,7 +44,6 @@ type PageProps = {
         intro: string
       }
     }
-    photo: ChildImageSharp
   }
 }
 
@@ -62,9 +62,12 @@ const Index: React.FunctionComponent<PageProps> = ({ data }) => {
               {data.site.siteMetadata.email}
             </a>
           </p>
-          <Image
-            fluid={data.photo.childImageSharp.fluid}
+          <StaticImage
+            src="../images/photo.png"
             alt={data.site.siteMetadata.author}
+            placeholder="tracedSVG"
+            layout="constrained"
+            style={{ display: "block" }}
           />
         </Colophon>
       </Sidebar>
@@ -116,19 +119,14 @@ export const pageQuery = graphql`
             unpublished
             cover {
               childImageSharp {
-                fluid(quality: 95, maxWidth: 1200) {
-                  ...GatsbyImageSharpFluid_withWebp_tracedSVG
-                }
+                gatsbyImageData(
+                  quality: 95
+                  placeholder: TRACED_SVG
+                  layout: FULL_WIDTH
+                )
               }
             }
           }
-        }
-      }
-    }
-    photo: file(relativePath: { eq: "photo.png" }) {
-      childImageSharp {
-        fluid(quality: 95, maxWidth: 535) {
-          ...GatsbyImageSharpFluid_withWebp_tracedSVG
         }
       }
     }

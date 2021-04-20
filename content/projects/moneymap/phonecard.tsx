@@ -1,9 +1,9 @@
 import React from "react"
 import styled from "styled-components"
 
-const Background = require("./phonecardbg.png")
-const Front = require("./phonefront.png")
-const Back = require("./phoneback.png")
+import Background from "./phonecardbg.png"
+import Front from "./phonefront.png"
+import Back from "./phoneback.png"
 
 const Wrapper = styled.div`
   max-width: 704px;

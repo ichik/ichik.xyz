@@ -1,10 +1,10 @@
 import React from "react"
 import styled from "styled-components"
 
-const iphone = require("./iphone-wireframe.png")
-const mp4 = require("./screencap.mp4")
-const webm = require("./screencap.webm")
-const poster = require("./gallery.jpg")
+import iphone from "./iphone-wireframe.png"
+import mp4 from "./screencap.mp4"
+import webm from "./screencap.webm"
+import poster from "./gallery.jpg"
 
 const Player = styled.div`
   @media (min-width: 388px) {

@@ -18,8 +18,9 @@ micro-animations to smart color palette choices.`,
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-styled-components`,
-    `gatsby-transformer-sharp`,
+    `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
     {
       resolve: `gatsby-plugin-mdx`,
       options: {
@@ -128,5 +129,50 @@ micro-animations to smart color palette choices.`,
     },
     `gatsby-plugin-offline`,
     `gatsby-plugin-netlify`,
+    {
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
+        query: `{
+          site {
+            siteMetadata {
+              siteUrl
+            }
+          }
+          allSitePage {
+            nodes {
+              path
+              context {
+                updated
+              }
+            }
+          }
+        }`,
+        resolveSiteUrl: ({ site }) => site.siteMetadata.siteUrl,
+        serialize: ({ site, allSitePage }) =>
+          allSitePage.nodes.map((node) => {
+            const { siteUrl } = site.siteMetadata
+            return {
+              url: `${siteUrl}${node.path}`,
+              lastmodISO: node.context.updated,
+            }
+          }),
+        createLinkInHead: true,
+      },
+    },
+    `gatsby-plugin-robots-txt`,
+    {
+      resolve: `gatsby-plugin-humans-txt`,
+      options: {
+        team: [
+          {
+            Developer: `Vadim Mikhnov`,
+            GitHub: `ichik`,
+          },
+        ],
+        site: {
+          "Last update": `2021/4/20`,
+        },
+      },
+    },
   ],
 }

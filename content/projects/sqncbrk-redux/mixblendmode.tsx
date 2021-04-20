@@ -1,8 +1,8 @@
 import React from "react"
 import styled from "styled-components"
 
-const mp4 = require("./mixblendmode.mp4")
-const poster = require("./mixblendmode.jpg")
+import mp4 from "./mixblendmode.mp4"
+import poster from "./mixblendmode.jpg"
 
 const Player = styled.div`
   > video {

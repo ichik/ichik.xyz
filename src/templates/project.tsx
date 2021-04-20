@@ -51,10 +51,10 @@ const Main = styled.main<Mainprops>`
   width: 100vw;
   overflow-x: hidden;
 
-  color: hsl(${props => props.textcolor || "0, 0%, 0%"});
-  background: hsl(${props => props.backgroundcolor || "0, 0%, 100%"});
+  color: hsl(${(props) => props.textcolor || "0, 0%, 0%"});
+  background: hsl(${(props) => props.backgroundcolor || "0, 0%, 100%"});
 
-  @media (min-width: ${props => props.theme.breakpoints.tabletHorizontal}) {
+  @media (min-width: ${(props) => props.theme.breakpoints.tabletHorizontal}) {
     grid-column-start: 2;
     width: auto;
   }
@@ -83,22 +83,21 @@ const Main = styled.main<Mainprops>`
   }
 `
 
-const PageTemplate: React.FunctionComponent<PageProps> = ({
-  data: { mdx },
-}) => {
+const PageTemplate: React.FunctionComponent<PageProps> = ({ data: { mdx } }) => {
   return (
     <Layout
       linkcolor={mdx.frontmatter.linkcolor}
       linkhovercolor={mdx.frontmatter.linkhovercolor}
     >
       <Meta
-        title={mdx.frontmatter.title}
+        title={
+          mdx.frontmatter.client
+            ? mdx.frontmatter.title + " for " + mdx.frontmatter.client
+            : mdx.frontmatter.title + " " + mdx.frontmatter.subtitle
+        }
         description={
           mdx.frontmatter.client
-            ? "For " +
-              mdx.frontmatter.client +
-              ", " +
-              mdx.frontmatter.description
+            ? "For " + mdx.frontmatter.client + ", " + mdx.frontmatter.description
             : mdx.frontmatter.subtitle + ", " + mdx.frontmatter.description
         }
         banner={mdx.frontmatter.banner.childImageSharp.resize.src}
@@ -116,9 +115,8 @@ const PageTemplate: React.FunctionComponent<PageProps> = ({
           {mdx.frontmatter.client ? (
             mdx.frontmatter.clienturl ? (
               <p>
-                For{" "}
-                <a href={mdx.frontmatter.clienturl}>{mdx.frontmatter.client}</a>
-                , {mdx.frontmatter.description}
+                For <a href={mdx.frontmatter.clienturl}>{mdx.frontmatter.client}</a>,{" "}
+                {mdx.frontmatter.description}
               </p>
             ) : (
               <p>

@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
-import Image from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image"
 import Snackbar from "./snackbar"
 import { ChildImageSharp } from "../types"
 
@@ -123,7 +123,10 @@ const GridItem: React.FunctionComponent<GridItemProps> = (props) => {
       title={props.title}
       to={props.to}
     >
-      <Image fluid={props.image.childImageSharp.fluid} />
+      <GatsbyImage
+        image={props.image.childImageSharp.gatsbyImageData}
+        alt={props.title}
+      />
       <Meta>
         <h2>{props.title}</h2>
         {props.client && (

@@ -1,12 +1,12 @@
 import React from "react"
 import styled from "styled-components"
 
-const sketchOld = require("./sketch-old.mp4")
-const sketchNew = require("./sketch-new.mp4")
-const photoshop = require("./photoshop.mp4")
-const sketchOldPoster = require("./sketch-old.jpg")
-const sketchNewPoster = require("./sketch-new.jpg")
-const photoshopPoster = require("./photoshop.jpg")
+import sketchOld from "./sketch-old.mp4"
+import sketchNew from "./sketch-new.mp4"
+import photoshop from "./photoshop.mp4"
+import sketchOldPoster from "./sketch-old.jpg"
+import sketchNewPoster from "./sketch-new.jpg"
+import photoshopPoster from "./photoshop.jpg"
 
 const Wrapper = styled.div`
   box-shadow: 0 0 2rem hsla(153, 13%, 5%, 90%);

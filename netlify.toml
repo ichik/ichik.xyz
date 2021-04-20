@@ -1,0 +1,14 @@
+[build]
+  publish = "public"
+
+[[plugins]]
+  package = "netlify-plugin-gatsby-cache"
+
+[build.environment]
+  NODE_VERSION = "14"
+  NODE_ENV = "production"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Permissions-Policy = "interest-cohort=()"
