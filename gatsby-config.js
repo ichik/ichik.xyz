@@ -147,16 +147,13 @@ micro-animations to smart color palette choices.`,
             }
           }
         }`,
-        resolveSiteUrl: ({ site }) => site.siteMetadata.siteUrl,
-        serialize: ({ site, allSitePage }) =>
-          allSitePage.nodes.map((node) => {
-            const { siteUrl } = site.siteMetadata
-            return {
-              url: `${siteUrl}${node.path}`,
-              lastmodISO: node.context.updated,
-            }
-          }),
-        createLinkInHead: true,
+        entryLimit: 100,
+        serialize: ({ path, updated }) => {
+          return {
+            url: path,
+            lastmod: updated,
+          }
+        },
       },
     },
     `gatsby-plugin-robots-txt`,
