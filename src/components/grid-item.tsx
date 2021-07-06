@@ -16,7 +16,6 @@ type GridItemProps = {
   categories: string[]
   color: string
   image: ChildImageSharp
-  key: string
   title: string
   to: string
 
