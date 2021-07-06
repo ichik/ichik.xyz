@@ -1,6 +1,7 @@
 # 2.0.5
 
 - Dependency updates
+- Minor refactoring and fixes
 
 # 2.0.4
 
