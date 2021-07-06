@@ -1,6 +1,6 @@
-import { resolve } from "path"
+const path = require("path")
 
-export async function createPages({ graphql, actions, reporter }) {
+exports.createPages = async ({ graphql, actions, reporter }) => {
   // Destructure the createPage function from the actions object
   const { createPage } = actions
 
@@ -28,7 +28,7 @@ export async function createPages({ graphql, actions, reporter }) {
   projects.forEach(({ node }, index) => {
     createPage({
       path: node.frontmatter.slug,
-      component: resolve(`./src/templates/project.tsx`),
+      component: path.resolve(`./src/templates/project.tsx`),
       context: { id: node.id, updated: node.frontmatter.updated },
     })
   })
