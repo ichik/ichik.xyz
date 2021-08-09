@@ -1,3 +1,8 @@
+# 2.0.6
+
+- Dependency updates
+- CV update
+
 # 2.0.5
 
 - Dependency updates
