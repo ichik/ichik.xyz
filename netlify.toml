@@ -12,3 +12,4 @@
   for = "/*"
   [headers.values]
     Permissions-Policy = "interest-cohort=()"
+    Content-Security-Policy = "upgrade-insecure-requests"
