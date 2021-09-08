@@ -1,5 +1,9 @@
 # 2.0.7
 
+- Dependency updates
+
+# 2.0.7
+
 - Hardened server response headers
 - Dependency updates
 
