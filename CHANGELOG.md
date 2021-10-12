@@ -1,3 +1,8 @@
+# 2.0.10
+
+- Fixed Moneymap phone details picture
+
+
 # 2.0.9
 
 - Dependency updates
