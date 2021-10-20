@@ -74,7 +74,7 @@ export default () => {
   return (
     <Footer>
       <p>
-        &copy; {data.site.siteMetadata.author}, {new Date().getFullYear()}
+        {data.site.siteMetadata.author}, 2010–{new Date().getFullYear()}
       </p>
       <Linklist>
         <a

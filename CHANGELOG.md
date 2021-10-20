@@ -1,3 +1,7 @@
+# 2.0.11
+
+- Updated footer
+
 # 2.0.10
 
 - Fixed Moneymap phone details picture
